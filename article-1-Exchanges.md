@@ -55,7 +55,7 @@ Implications and drawbacks
 
 The attentive reader will quickly realize that liquidity provider, in contrast to traders, are exposed to a risk. Additionally, they need to lock down their funds to provide the liquidity. Hence, they do have opportunity costs for the locked down capital. Therefore, it will not be discussed further. Therefore, let's check the risk a liquidity provider bears. In this example let's assume the fair value of $`1_{DAI}`$ is $`1_{ETH}`$ (I know... it's for illustration purpose only).
 
-Scenario 1:
+*Scenario 1:*
      No trades happen
 
 Value on Uniswap
@@ -78,7 +78,7 @@ Total value in
 
 In $`t_3`$ the liquidity provider withdraws his funds and gets back what he put in initially ($`100_{DAI}`$ and $`100_{ETH}`$). Hence, the liquidity provider only has opportunity costs because they did not earn any interest on the capital in this time. The opportunity cost for locked down capital is pretty obvious. The liquidity provider could use the capital and e.g. earn interest rates on it (e.g. on compound.finance or xxx). 
 
-Scenario 2:
+*Scenario 2:*
      Trader 1 buys 5 DAI for ETH.
 
 | $`t_0`$ | $`t_1`$ | $`t_2`$ | $`t_3`$ |
@@ -112,7 +112,7 @@ Total value in
 
 | DAI | ETH | mixed |
 | -------- | -------- | -------- |
-| $`90_{DAI} + 111.111_{ETH} / 5.84795_{ETH/DAI} *5 = 185_{DAI}`$ | $`90_{DAI}*(5.263158_{DAI/ETH}/5) + 111.111_{ETH} = 216.3741_{ETH}`$ | 99.49991_{DAI} 100_{ETH} |
+| $`90_{DAI} + 111.111_{ETH} / 5.84795_{ETH/DAI} *5 = 185_{DAI}`$ | $`90_{DAI}*(5.263158_{DAI/ETH}/5) + 111.111_{ETH} = 216.3741_{ETH}`$ | 99.49991 DAI 100 ETH |
 
 (Assuming another exchange provides enough volume at the current $`(5.263158_{ETH}/5) = 1_{DAI}`$ price. Because, in case, the liquidity provider is the only one, another exchange is needed to convert the corresponding funds.)
 
@@ -148,6 +148,11 @@ Upcoming topics:
 [3]: https://www.youtube.com/watch?v=Iaiw5iGjXbw
 [4]: https://www.investopedia.com/terms/r/request-for-quote.asp
 [5]: https://mikemcdonald.github.io/eth-defi/
+
+----------------------------------------------------------
+
+NOTES LEFT OVERS AND REMINDERS - DELETE FOR LIVE VERSION
+
 ----------------------------------------------------------
 
 Value on another Exchange

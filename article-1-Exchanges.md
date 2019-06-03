@@ -36,7 +36,7 @@ The $`supplyAsset_A`$ is the amount of Asset A currently available on the exchan
 
 The product is some value $`C`$. 
 
-For example: $`100_DAI x 100_ETH = 10000_DAIxETH`$. So far, so good.
+For example: $`100_{DAI} x 100_{ETH} = 10000_{DAIxETH}`$. So far, so good.
 
 Two participants exist on [Uniswap](https://uniswap.io/). So called **liquidity provider** and the **common traders**. 
 First, let us focus on the trader who wants to buy 5 DAI for ETH. Given the function above and the example liquidity of $`100_{DAI}`$ and $`100_{ETH}`$ on the exchange, the trader can calculate the price they have to pay for $`5_{DAI}`$. The simple rule is: Keep the product constant. Hence, after the trade the product still needs to be $`10000_DAIxETH`$. Let's see how much ETH the trader needs to put into the ETH liquidity pool to take out 5 DAI and keep the product constant. This can easily be calculated by $`100_{DAI} - 5_{DAI} * 100_{ETH} + x_{ETH} = 10000_{DAIxETH}`$. We substract $`5_{DAI}`$ because they are taken out of the pool. We add $`x_{ETH}`$ because that is what the trader needs to pay (put into the pool) for taking the $`5_{DAI}`$ out. Solving for $`x_{ETH}`$ gives $`x_{ETH} = 10000_{DAIxETH} / 95_{DAI} - 100_{ETH}`$. Hence, $`x_{ETH} = 5.263158_{ETH}`$. This price seems reasonable because we started with a 1:1 ration of DAI and ETH. If one asset has high demand, the liquidity pool will have less and less of this asset. Hence, it gets more and more expensive.

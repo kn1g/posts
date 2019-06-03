@@ -41,7 +41,17 @@ In a nutshell, that's all. This sounds a little bit too simple. But maybe this i
 
 Implications and drawbacks
 
-The attentive reader will quickly realize that liquidity provider, in contrast to traders, are exposed to a risk. Additionally, they need to lock down their funds to provide the liquidity. Hence, they do have opportunity costs for the locked down capital. Ok, what is the motivation to become a liquidity provider? 
+The attentive reader will quickly realize that liquidity provider, in contrast to traders, are exposed to a risk. Additionally, they need to lock down their funds to provide the liquidity. Hence, they do have opportunity costs for the locked down capital. First, let's check the risk a liquidity provider bears. 
+
+Scenario 1:
+     No trades happen. 
+    | $t_0$ | $t_1$ | $t_2$ |
+    |---|---|---|
+    | 100 DAI | 100 DAI | 100 DAI |
+    | 100 ETH | 100 ETH | 100 ETH |
+
+
+The opportunity cost for locked down capital is pretty obvious. The liquidity provider could use the capital and e.g. earn interest rates on it (e.g. on compound.finance or xxx). Therefore, it will not be discussed further. Ok, what is the motivation to become a liquidity provider? They ge a 
 
 
 Can the system collapse?

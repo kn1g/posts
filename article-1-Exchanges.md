@@ -57,6 +57,7 @@ Value on Uniswap
 | DAI | ETH | mixed |
 | -------- | -------- | -------- |
 | 200 DAI | 200 ETH | 100 DAI 100 ETH|
+
 (Assuming another exchange provides enough volume at the current $1 ETH = 1 DAI$ price. Because, in case, the liquidity provider is the only one, another exchange is needed to convert the corresponding funds.)
 
 <Kurvenbild>
@@ -76,6 +77,7 @@ Total value in
 | DAI | ETH | mixed |
 | -------- | -------- | -------- |
 | $95 DAI + 105.263158 ETH / 5.263158 ETH/DAI *5=195 DAI$ | $95*(5.263158/5) + 105.263158 = 205.263158 ETH$ | 100 DAI 100 ETH |
+
 (Assuming another exchange provides enough volume at the current $(5.263158 ETH/5) = 1 DAI$ price. Because, in case, the liquidity provider is the only one, another exchange is needed to convert the corresponding funds.)
 
 <Kurvenbild>
@@ -96,6 +98,7 @@ Total value in
 | DAI | ETH | mixed |
 | -------- | -------- | -------- |
 | $90 DAI + 111.111 ETH / 5.84795 ETH/DAI *5 = 185 DAI$ | $90*(5.263158/5) + 111.111 = 216.3741 ETH$ | 99.49991 DAI 100 ETH |
+
 (Assuming another exchange provides enough volume at the current $(5.263158 ETH/5) = 1 DAI$ price. Because, in case, the liquidity provider is the only one, another exchange is needed to convert the corresponding funds.)
 
 Now, it gets interesting. The liquidity provider would get back 90 DAI and 111.111 ETH. But in total the liquidity provider lost $0.50009$ DAI (or the corresponding amount in ETH). This is the additional risk the liquidity provider bears. To get back his initual investment the liquidity provider always needs to trade the asset which lost worth against the one which gained worth. As soon as the price starts moving into one direction, the liquidity provider will get the latest (but worst) price, to trade back his funds. In case the latest price was not the price to which all trades happened, a loss will be the result. In our example there was one trade at $`5.263158 ETH/DAI`$ and one at $`5.84795 ETH/DAI`$. To get back the initial investment of 100 DAI and 100 ETH the liquidity provider would need to trade $`5 ETH`$ at $`5.84795 ETH/DAI`$ and 5 at $`5.263158 ETH/DAI`$. But  $`5.263158 ETH/DAI`$ is history. The current exchange rate is $`5.84795 ETH/DAI`$ and therefore, worse. Hence, the liquidity provider needs to exchange $`10 ETH`$ at $`5.84795 ETH/DAI`$ and the loss occurs.  

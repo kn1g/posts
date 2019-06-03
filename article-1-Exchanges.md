@@ -1,12 +1,12 @@
 # Disruption or disillusion? 
-*Upcoming Exchange concepts.*
 
-## Uniswap - A farewell to the order book?
-Part 1 - Introduction
+## Upcoming Exchange concepts - A farewell to the order book?
+Part 1 - General Introduction and Uniswap
 
-Cryptoprojects often praise themselves as disruptive all new projects. If you take a look behind the scenes, in most projects disruption becomes disillusion. Scam, bad copy-cats, ideas far beyond reality, mooning marketing concepts and "making already existing solutions just more inefficient", is predominant in the blockchain world. Fortunately, people got more and more suspicious after the first bubble bursted. Hence, it became harder for bullshit to survive and more and more promising projects evolve. But are these project really disruptive? Do they have the potential to take over what we used to know? 
+Cryptoprojects often praise themselves as disruptive "all new" projects. If you take a look behind the scenes, in most projects disruption becomes disillusion. Scam, bad copy-cats, ideas far beyond reality, mooning marketing concepts and "making already existing solutions just more inefficient", is predominant in the blockchain scene. Fortunately, people got more and more suspicious after the first bubble bursted. Hence, it became harder for bullshit to survive and more and more promising projects evolve. But are these project really disruptive? Do they have the potential to take over what we used to know? 
 
-I am a finance PhD student - currently employed as an auditor at Chainsecurity (one of the leading blockchain security companies in the world). We audit big projects and get unique insights into them. I will introduce my favorite (often - but not only finance related) projects in my blog series "Disruption or disillusion?". If you are interested follow me @ecofork (twitter) or subscribe here. Don't let this be a one-man show and please start a lively discussion about these topics. This is article one. Topic: **The end of common exchanges?** *Upcoming Exchange concepts - a farewell to the order book?*
+I am a finance PhD student - currently employed as an auditor at Chainsecurity (one of the leading blockchain security companies in the world). We audit big projects and get unique insights into them. I will introduce my favorite (often - but not only finance related) projects in my blog series **Disruption or disillusion?**. If you are interested follow me @ecofork (twitter) or subscribe here. Please, don't let this be a one-man show and start a lively discussion about these topics. 
+Topic: **Upcoming Exchange concepts - A farewell to the order book?** *Part 1 - General Introduction and Uniswap*
 
 Quick reminder on how common markets are classified and how they work. If you know it, feel free to skip this part. We usually differ between three different market types. 
 -   Dealer market

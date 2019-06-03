@@ -1,16 +1,19 @@
- Disruption or disillusion? 
+Disruption or disillusion? 
 
-The end of common exchanges?
-A farewell to the order book.
+*Upcoming Exchange concepts.*
 
-Cryptoproject often praise themselves as disruptive all new projects. If you take a look behind the scenes, in most projects disruption becomes disillusion. Scam, bad copy-cats, ideas far beyond reality, mooning marketing concepts and "making already existing solutions just more inefficient", is predominant in the blockchain world. Fortunately, people got more and more suspicious after the first bubble bursted. Hence, it became harder for bullshit to survive and more and more promising projects evolve. But are these project really disruptive? Do they have the potential to take over what we used to know? 
+Uniswap - A farewell to the order book?
+
+Part 1 - Introduction
+
+Cryptoprojects often praise themselves as disruptive all new projects. If you take a look behind the scenes, in most projects disruption becomes disillusion. Scam, bad copy-cats, ideas far beyond reality, mooning marketing concepts and "making already existing solutions just more inefficient", is predominant in the blockchain world. Fortunately, people got more and more suspicious after the first bubble bursted. Hence, it became harder for bullshit to survive and more and more promising projects evolve. But are these project really disruptive? Do they have the potential to take over what we used to know? 
 
 I am a finance PhD student - currently employed as an auditor at Chainsecurity (one of the leading blockchain security companies in the world). We audit big projects and get unique insights into them. I will introduce my favorite (often - but not only finance related) projects in my blog series "Disruption or disillusion?". If you are interested follow me @ecofork (twitter) or subscribe here. Don't let this be a one-man show and please start a lively discussion about these topics. This is article one. Topic: **The end of common exchanges?** *Upcoming Exchange concepts - a farewell to the order book?*
 
 Quick reminder on how common markets are classified and how they work. If you know it, feel free to skip this part. We usually differ between three different market types. 
-(1) Dealer market
-(2) Broker market
-(3) Exchange
+-   Dealer market
+-   Broker market
+-   Exchange
 
 We won't go into detail here for Dealer and broker markets. This can be looked up quickly in the linked articles TODO. Let us set the focus Exchanges (very high-level and simplified). Exchanges try to connect the two parties (buyer and seller) directly. Usually done by an auction based market. In an auction based market buyers enter competitive bids and sellers submit competitive offers. The exchange keeps track of all bids and offers (asks) in a so called order book. The exchanges try to match two orders if possible. The current price is the price where the last bid/ask match was possible. The bid ask spread is the price different between the bid and ask orders closest to the current price.
 The example below illustrates an order-book with trades.
@@ -53,6 +56,7 @@ Value on Uniswap
 | 100 DAI | 100 DAI | 100 DAI | 100 DAI |
 | 100 ETH | 100 ETH | 100 ETH | 100 ETH |
 
+Total value in
 
 | DAI | ETH | mixed |
 | -------- | -------- | -------- |
@@ -74,6 +78,7 @@ Scenario 2:
 | 100 ETH | 105.263158 ETH | 105.263158 ETH | 105.263158 ETH |
 
 Total value in 
+
 | DAI | ETH | mixed |
 | -------- | -------- | -------- |
 | $95 DAI + 105.263158 ETH / 5.263158 ETH/DAI *5=195 DAI$ | $95*(5.263158/5) + 105.263158 = 205.263158 ETH$ | 100 DAI 100 ETH |
@@ -82,7 +87,7 @@ Total value in
 
 <Kurvenbild>
 
-This time, the liquidity provider gets 95 ETH and 105.263158 ETH back. Now DAI is worth more than ETH. Therefore, the total value in DAI or ETH changes according to the currency used for evaluation. But overall, the value does not change. 
+This time, the liquidity provider gets 95 ETH and 105.263158 ETH back. Now DAI is worth more than ETH. Therefore, the total value in DAI or ETH changes according to the currency used for evaluation. But overall, the value does not change. As before, the liquidity provider only has opportunity costs.
 
 
 Scenario 3:
@@ -101,29 +106,14 @@ Total value in
 
 (Assuming another exchange provides enough volume at the current $(5.263158 ETH/5) = 1 DAI$ price. Because, in case, the liquidity provider is the only one, another exchange is needed to convert the corresponding funds.)
 
-Now, it gets interesting. The liquidity provider would get back 90 DAI and 111.111 ETH. But in total the liquidity provider lost $0.50009$ DAI (or the corresponding amount in ETH). This is the additional risk the liquidity provider bears. To get back his initual investment the liquidity provider always needs to trade the asset which lost worth against the one which gained worth. As soon as the price starts moving into one direction, the liquidity provider will get the latest (but worst) price, to trade back his funds. In case the latest price was not the price to which all trades happened, a loss will be the result. In our example there was one trade at $`5.263158 ETH/DAI`$ and one at $`5.84795 ETH/DAI`$. To get back the initial investment of 100 DAI and 100 ETH the liquidity provider would need to trade $`5 ETH`$ at $`5.84795 ETH/DAI`$ and 5 at $`5.263158 ETH/DAI`$. But  $`5.263158 ETH/DAI`$ is history. The current exchange rate is $`5.84795 ETH/DAI`$ and therefore, worse. Hence, the liquidity provider needs to exchange $`10 ETH`$ at $`5.84795 ETH/DAI`$ and the loss occurs.  
-
-Value on another Exchange
-
-| $`t_0`$ | $`t_1`$ | $`t_2`$ | $`t_3`$ |
-| -------- | -------- | -------- | -------- |
-| 100 DAI | 100 DAI | 100 DAI | 100 ETH |
-| 100 ETH | 100 ETH | 100 ETH | 100 ETH |
-
-
 <Kurvenbild>
 
-This time the liquidity provider gets 95 ETH and 105.263158 ETH back. The total value, again, did not change. Like above, the liquidity provider only has opportunity costs.
+Now, it gets interesting. The liquidity provider would get back 90 DAI and 111.111 ETH. But in total the liquidity provider lost $0.50009$ DAI (or the corresponding amount in ETH). This is the additional risk the liquidity provider bears. To get back his initual investment the liquidity provider always needs to trade the asset which lost worth against the one which gained worth. As soon as the price starts moving into one direction, the liquidity provider will get the latest (but worst) price, to trade back his funds. In case the latest price was not the price to which all trades happened, a loss will be the result. In our example there was one trade at $`5.263158 ETH/DAI`$ and one at $`5.84795 ETH/DAI`$. To get back the initial investment of 100 DAI and 100 ETH the liquidity provider would need to trade $`5 ETH`$ at $`5.84795 ETH/DAI`$ and 5 at $`5.263158 ETH/DAI`$. But  $`5.263158 ETH/DAI`$ is history. The current exchange rate is $`5.84795 ETH/DAI`$ and therefore, worse. Hence, the liquidity provider needs to exchange $`10 ETH`$ at $`5.84795 ETH/DAI`$ and the loss occurs. The loss increases if more trades happened at a more favorable price and/or the price gap increases between the last price and the prices before.
+
+What is the compensation for someone to become a liquidity provider? They do get a fee which is charged with each trade. The million dollar question is, if or when do the fees compensate the risk plus the opportunity costs.
 
 
-Ok, what is the motivation to become a liquidity provider? They ge a compensation in fees.
-What is the perfect compensation
-
-
-Can the system collapse?
-
-How is it implemented?
-locked in in the exchange contract
+I do not want to write the articles too long. Therefore, I will stop here. 
 
 What makes Uniswap so interesting? Pros?
 
@@ -136,6 +126,25 @@ What research can be done?
 
 If you like this article please subscribe. Tell me if you additionally would prefer podcasts or Youtube videos.
 
+Upcoming topics: 
+   -  Does it make sense to become a liquidity provider for Uniswap?
+   -  arbitrage opportunities (at best this should be done by liquidity providers)
+   -  Can the system collapse?
+   -  How is the code implementation?
+   -  Bancor another concept
+
+
+----------------------------------------------------------
+
+Value on another Exchange
+
+| $`t_0`$ | $`t_1`$ | $`t_2`$ | $`t_3`$ |
+| -------- | -------- | -------- | -------- |
+| 100 DAI | 100 DAI | 100 DAI | 100 ETH |
+| 100 ETH | 100 ETH | 100 ETH | 100 ETH |
+
+
+<Kurvenbild>
 
 
 The project was created by Hayden Adams, a former mechanical engineer.

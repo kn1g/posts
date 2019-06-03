@@ -39,7 +39,7 @@ The product is some value $`C`$.
 For example: $`100_DAI x 100_ETH = 10000_DAIxETH`$. So far, so good.
 
 Two participants exist on [Uniswap](https://uniswap.io/). So called **liquidity provider** and the **common traders**. 
-First, let us focus on the trader who wants to buy 5 DAI for ETH. Given the function above and the example liquidity of 100 DAI and 100 ETH on the exchange, the trader can calculate the price they have to pay for 5 DAI. The simple rule is: Keep the product constant. Hence, after the trade the product still needs to be $`10000_DAIxETH`$. Let's see how much ETH the trader needs to put into the ETH liquidity pool to take out 5 DAI and keep the product constant. This can easily be calculated by $`100_{DAI} - 5_DAI * 100_ETH + x_ETH = 10000 DAIxETH`$. We substract $`5_DAI`$ because they are taken out of the pool. We add $`x_{ETH}`$ because that is what the trader needs to pay (put into the pool) for taking the $`5_DAI`$ out. Solving for $`x_ETH`$ gives $`x_ETH = 10000_DAIxETH / 95_DAI - 100_ETH`$. Hence, $`x_ETH = 5.263158_ETH`$. This price seems reasonable because we started with a 1:1 ration of DAI and ETH. If one asset has high demand, the liquidity pool will have less and less of this asset. Hence, it gets more and more expensive.
+First, let us focus on the trader who wants to buy 5 DAI for ETH. Given the function above and the example liquidity of $`100_{DAI}`$ and $`100_{ETH}`$ on the exchange, the trader can calculate the price they have to pay for $`5_{DAI}`$. The simple rule is: Keep the product constant. Hence, after the trade the product still needs to be $`10000_DAIxETH`$. Let's see how much ETH the trader needs to put into the ETH liquidity pool to take out 5 DAI and keep the product constant. This can easily be calculated by $`100_{DAI} - 5_{DAI} * 100_{ETH} + x_{ETH} = 10000_{DAIxETH}`$. We substract $`5_{DAI}`$ because they are taken out of the pool. We add $`x_{ETH}`$ because that is what the trader needs to pay (put into the pool) for taking the $`5_{DAI}`$ out. Solving for $`x_{ETH}`$ gives $`x_{ETH} = 10000_{DAIxETH} / 95_{DAI} - 100_{ETH}`$. Hence, $`x_{ETH} = 5.263158_{ETH}`$. This price seems reasonable because we started with a 1:1 ration of DAI and ETH. If one asset has high demand, the liquidity pool will have less and less of this asset. Hence, it gets more and more expensive.
 Below there are further example trades and how the price changes.
 
 *Illustration or Table*
@@ -71,7 +71,7 @@ Total value in
 | -------- | -------- | -------- |
 | 200 DAI | 200 ETH | 100 DAI 100 ETH|
 
-(Assuming another exchange provides enough volume at the current $`1 ETH = 1 DAI`$ price. Because, in case, the liquidity provider is the only one, another exchange is needed to convert the corresponding funds.)
+(Assuming another exchange provides enough volume at the current $`1_{ETH} = 1_{DAI}`$ price. Because, in case, the liquidity provider is the only one, another exchange is needed to convert the corresponding funds.)
 
 <Kurvenbild>
 
@@ -90,7 +90,7 @@ Total value in
 
 | DAI | ETH | mixed |
 | -------- | -------- | -------- |
-| $`95 DAI + 105.263158 ETH / 5.263158 ETH/DAI *5=195 DAI`$ | $`95*(5.263158/5) + 105.263158 = 205.263158 ETH`$ | 100 DAI 100 ETH |
+| $`95_{DAI} + 105.263158_{ETH} / 5.263158_{ETH/DAI} *5=195_{DAI}`$ | $`95_{DAI}*(5.263158_{ETH/DAI}/5) + 105.263158_{ETH} = 205.263158_{ETH}`$ | 100 DAI 100 ETH |
 
 (Assuming another exchange provides enough volume at the current $`(5.263158 ETH/5) = 1 DAI`$ price. Because, in case, the liquidity provider is the only one, another exchange is needed to convert the corresponding funds.)
 
@@ -111,7 +111,7 @@ Scenario 3:
 Total value in 
 | DAI | ETH | mixed |
 | -------- | -------- | -------- |
-| $`90 DAI + 111.111 ETH / 5.84795 ETH/DAI *5 = 185 DAI`$ | $`90*(5.263158/5) + 111.111 = 216.3741 ETH`$ | 99.49991 DAI 100 ETH |
+| $`90_{DAI} + 111.111_{ETH} / 5.84795_{ETH/DAI} *5 = 185_{DAI}`$ | $`90_{DAI}*(5.263158_{DAI/ETH}/5) + 111.111_{ETH} = 216.3741_{ETH}`$ | 99.49991_{DAI} 100_{ETH} |
 
 (Assuming another exchange provides enough volume at the current $`(5.263158 ETH/5) = 1 DAI`$ price. Because, in case, the liquidity provider is the only one, another exchange is needed to convert the corresponding funds.)
 

@@ -15,7 +15,7 @@ We usually differ between three different market types.
 -   Broker market
 -   Exchange
 
-We won't go into detail here for Dealer and broker markets. This can be looked up quickly in the [linked articles][1 2]. Let us set the focus Exchanges (very high-level and simplified). Exchanges try to connect the two parties (buyer and seller) directly. Usually done by an auction based market. In an auction based market buyers enter competitive bids and sellers submit competitive offers. The exchange keeps track of all bids and offers (asks) in a so called order book. The exchanges try to match two orders if possible. The current price is the price where the last bid/ask match was possible. The bid ask spread is the price different between the bid and ask orders closest to the current price.
+We won't go into detail here for Dealer and broker markets. This can be looked up quickly in the [linked articles][1]. Let us set the focus Exchanges (very high-level and simplified). Exchanges try to connect the two parties (buyer and seller) directly. Usually done by an auction based market. In an auction based market buyers enter competitive bids and sellers submit competitive offers. The exchange keeps track of all bids and offers (asks) in a so called order book. The exchanges try to match two orders if possible. The current price is the price where the last bid/ask match was possible. The bid ask spread is the price different between the bid and ask orders closest to the current price.
 The example below illustrates an order-book with trades.
 
 <Illustration>

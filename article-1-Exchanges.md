@@ -41,21 +41,74 @@ In a nutshell, that's all. This sounds a little bit too simple. But maybe this i
 
 Implications and drawbacks
 
-The attentive reader will quickly realize that liquidity provider, in contrast to traders, are exposed to a risk. Additionally, they need to lock down their funds to provide the liquidity. Hence, they do have opportunity costs for the locked down capital. First, let's check the risk a liquidity provider bears. 
+The attentive reader will quickly realize that liquidity provider, in contrast to traders, are exposed to a risk. Additionally, they need to lock down their funds to provide the liquidity. Hence, they do have opportunity costs for the locked down capital. Therefore, it will not be discussed further. Therefore, let's check the risk a liquidity provider bears. In this example let's assume the fair value of 1 DAI is 1 ETH (I know... it's for illustration purpose only).
 
 Scenario 1:
-     No trades happen. 
+     No trades happen
 
-| $`t_0`$ | $`t_1`$ | $`t_2`$ |
-| -------- | -------- | -------- |
-| 100 DAI | 100 DAI | 100 DAI |
-| 100 ETH | 100 ETH | 100 ETH |
+Value on Uniswap
+
+| $`t_0`$ | $`t_1`$ | $`t_2`$ | $`t_3`$ |
+| -------- | -------- | -------- | -------- |
+| 100 DAI | 100 DAI | 100 DAI | 100 DAI |
+| 100 ETH | 100 ETH | 100 ETH | 100 ETH |
+
+Value on another Exchange
+
+| $`t_0`$ | $`t_1`$ | $`t_2`$ | $`t_3`$ |
+| -------- | -------- | -------- | -------- |
+| 100 DAI | 100 DAI | 100 DAI | 100 ETH |
+| 100 ETH | 100 ETH | 100 ETH | 100 ETH |
+
+Total value in (assuming other exchanges reflect the same price - no arbitrage)
+| DAI | ETH | 
+| -------- | -------- | 
+| 200 DAI | 200 ETH | 
+
+<Kurvenbild>
 
 
+In $`t_3`$ the liquidity provider withdraws his funds and gets back what he put in initially (100 DAI and 100 ETH). Hence, the liquidity provider only has opportunity costs because they did not earn any interest on the capital in this time. The opportunity cost for locked down capital is pretty obvious. The liquidity provider could use the capital and e.g. earn interest rates on it (e.g. on compound.finance or xxx). 
+
+Scenario 2:
+     Trader 1 buys 5 DAI for ETH.
+
+| $`t_0`$ | $`t_1`$ | $`t_2`$ | $`t_3`$ |
+| -------- | -------- | -------- | -------- |
+| 100 DAI | 95 DAI | 95 DAI | 95 ETH |
+| 100 ETH | 105.263158 ETH | 105.263158 ETH | 105.263158 ETH |
+
+Total value in 
+| DAI | ETH |
+| -------- | -------- | 
+| $95 DAI + 105.263158/5.263158*5=195 DAI$ | $95*(5.263158/5) + 105.263158 = 205.263158 ETH$ | 
+(Assuming another exchange provides enough volume at the current $(5.263158 ETH/5) = 1 DAI$ price. Because, in case, the liquidity provider is the only one, another exchange is needed.)
+
+<Kurvenbild>
+
+This time the liquidity provider gets 95 ETH and 105.263158 ETH back. The total value, again, did not change. Like above, the liquidity provider only has opportunity costs. No matter how many
+
+Scenario 3:
+     Trader 1 buys 5 DAI for ETH.
+     Trader 2 buys 5 DAI for ETH.
+
+| $`t_0`$ | $`t_1`$ | $`t_2`$ | $`t_3`$ |
+| -------- | -------- | -------- | -------- |
+| 100 DAI | 95 DAI | 90 DAI | 90 DAI |
+| 100 ETH | 105.263158 ETH | 111.111 ETH | 111.111 ETH |
+
+Total value in (assuming other exchanges reflect the same price - no arbitrage)
+| DAI | ETH |
+| -------- | -------- | 
+| 200 DAI | 200 ETH | 
+
+<Kurvenbild>
+
+This time the liquidity provider gets 95 ETH and 105.263158 ETH back. The total value, again, did not change. Like above, the liquidity provider only has opportunity costs.
 
 
-
-The opportunity cost for locked down capital is pretty obvious. The liquidity provider could use the capital and e.g. earn interest rates on it (e.g. on compound.finance or xxx). Therefore, it will not be discussed further. Ok, what is the motivation to become a liquidity provider? They ge a 
+Ok, what is the motivation to become a liquidity provider? They ge a compensation in fees.
+What is the perfect compensation
 
 
 Can the system collapse?

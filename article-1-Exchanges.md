@@ -53,17 +53,11 @@ Value on Uniswap
 | 100 DAI | 100 DAI | 100 DAI | 100 DAI |
 | 100 ETH | 100 ETH | 100 ETH | 100 ETH |
 
-Value on another Exchange
 
-| $`t_0`$ | $`t_1`$ | $`t_2`$ | $`t_3`$ |
-| -------- | -------- | -------- | -------- |
-| 100 DAI | 100 DAI | 100 DAI | 100 ETH |
-| 100 ETH | 100 ETH | 100 ETH | 100 ETH |
-
-Total value in (assuming other exchanges reflect the same price - no arbitrage)
-| DAI | ETH | 
-| -------- | -------- | 
-| 200 DAI | 200 ETH | 
+| DAI | ETH | mixed |
+| -------- | -------- | -------- |
+| 200 DAI | 200 ETH | 100 DAI 100 ETH|
+(Assuming another exchange provides enough volume at the current $1 ETH = 1 DAI$ price. Because, in case, the liquidity provider is the only one, another exchange is needed to convert the corresponding funds.)
 
 <Kurvenbild>
 
@@ -79,28 +73,40 @@ Scenario 2:
 | 100 ETH | 105.263158 ETH | 105.263158 ETH | 105.263158 ETH |
 
 Total value in 
-| DAI | ETH |
-| -------- | -------- | 
-| $95 DAI + 105.263158/5.263158*5=195 DAI$ | $95*(5.263158/5) + 105.263158 = 205.263158 ETH$ | 
-(Assuming another exchange provides enough volume at the current $(5.263158 ETH/5) = 1 DAI$ price. Because, in case, the liquidity provider is the only one, another exchange is needed.)
+| DAI | ETH | mixed |
+| -------- | -------- | -------- |
+| $95 DAI + 105.263158 ETH / 5.263158 ETH/DAI *5=195 DAI$ | $95*(5.263158/5) + 105.263158 = 205.263158 ETH$ | 100 DAI 100 ETH |
+(Assuming another exchange provides enough volume at the current $(5.263158 ETH/5) = 1 DAI$ price. Because, in case, the liquidity provider is the only one, another exchange is needed to convert the corresponding funds.)
 
 <Kurvenbild>
 
-This time the liquidity provider gets 95 ETH and 105.263158 ETH back. The total value, again, did not change. Like above, the liquidity provider only has opportunity costs. No matter how many
+This time, the liquidity provider gets 95 ETH and 105.263158 ETH back. Now DAI is worth more than ETH. Therefore, the total value in DAI or ETH changes according to the currency used for evaluation. But overall, the value does not change. 
+
 
 Scenario 3:
-     Trader 1 buys 5 DAI for ETH.
-     Trader 2 buys 5 DAI for ETH.
+     Trader 1 buys 5 DAI for ETH (5.263158 ETH/DAI).
+     Trader 2 buys 5 DAI for ETH (5.84795  ETH/DAI).
 
 | $`t_0`$ | $`t_1`$ | $`t_2`$ | $`t_3`$ |
 | -------- | -------- | -------- | -------- |
 | 100 DAI | 95 DAI | 90 DAI | 90 DAI |
 | 100 ETH | 105.263158 ETH | 111.111 ETH | 111.111 ETH |
 
-Total value in (assuming other exchanges reflect the same price - no arbitrage)
-| DAI | ETH |
-| -------- | -------- | 
-| 200 DAI | 200 ETH | 
+Total value in 
+| DAI | ETH | mixed |
+| -------- | -------- | -------- |
+| $90 DAI + 111.111 ETH / 5.84795 ETH/DAI *5 = 185 DAI$ | $90*(5.263158/5) + 111.111 = 216.3741 ETH$ | 99.49991 DAI 100 ETH |
+(Assuming another exchange provides enough volume at the current $(5.263158 ETH/5) = 1 DAI$ price. Because, in case, the liquidity provider is the only one, another exchange is needed to convert the corresponding funds.)
+
+Now, it gets interesting. The liquidity provider would get back 90 DAI and 111.111 ETH. But in total the liquidity provider lost $0.50009$ DAI (or the corresponding amount in ETH). This is the additional risk the liquidity provider bears. To get back his initual investment the liquidity provider always needs to trade the asset which lost worth against the one which gained worth. As soon as the price starts moving into one direction, the liquidity provider will get the latest (but worst) price, to trade back his funds. In case the latest price was not the price to which all trades happened, a loss will be the result. In our example there was one trade at $`5.263158 ETH/DAI`$ and one at $`5.84795 ETH/DAI`$. To get back the initial investment of 100 DAI and 100 ETH the liquidity provider would need to trade $`5 ETH`$ at $`5.84795 ETH/DAI`$ and 5 at $`5.263158 ETH/DAI`$. But  $`5.263158 ETH/DAI`$ is history. The current exchange rate is $`5.84795 ETH/DAI`$ and therefore, worse. Hence, the liquidity provider needs to exchange $`10 ETH`$ at $`5.84795 ETH/DAI`$ and the loss occurs.  
+
+Value on another Exchange
+
+| $`t_0`$ | $`t_1`$ | $`t_2`$ | $`t_3`$ |
+| -------- | -------- | -------- | -------- |
+| 100 DAI | 100 DAI | 100 DAI | 100 ETH |
+| 100 ETH | 100 ETH | 100 ETH | 100 ETH |
+
 
 <Kurvenbild>
 

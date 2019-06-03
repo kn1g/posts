@@ -46,15 +46,12 @@ The attentive reader will quickly realize that liquidity provider, in contrast t
 Scenario 1:
      No trades happen. 
 
-    | t_0 | t_1 | t_2 |
-    | -------- | -------- | -------- |
-    | 100 DAI | 100 DAI | 100 DAI |
-    | 100 ETH | 100 ETH | 100 ETH |
+| t_0 | t_1 | t_2 |
+| -------- | -------- | -------- |
+| 100 DAI | 100 DAI | 100 DAI |
+| 100 ETH | 100 ETH | 100 ETH |
 
-    | header 1 | header 2 |
-| -------- | -------- |
-| cell 1   | cell 2   |
-| cell 3   | cell 4   |
+
 
 
 

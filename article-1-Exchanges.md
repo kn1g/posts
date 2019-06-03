@@ -36,10 +36,10 @@ The $`supplyAsset_A`$ is the amount of Asset A currently available on the exchan
 
 The product is some value $`C`$. 
 
-For example $`100 DAI x 100 ETH = 10000 DAIxETH`$. So far, so good.
+For example: $`100_DAI x 100_ETH = 10000_DAIxETH`$. So far, so good.
 
 Two participants exist on [Uniswap](https://uniswap.io/). So called **liquidity provider** and the **common traders**. 
-First, let us focus on the trader who wants to buy 5 DAI for ETH. Given the function above and the example liquidity of 100 DAI and 100 ETH on the exchange, the trader can calculate the price they have to pay for 5 DAI. The simple rule is: Keep the product constant. Hence, after the trade the product still needs to be 10000 DAIxETH. Let's see how much ETH the trader needs to put into the ETH liquidity pool to take out 5 DAI and keep the product constant. This can easily be calculated by $`100 DAI - 5 DAI (the amount the trader did take) * 100 + x (the amount the trader needs to put in the pool for taking out 5 DAI) = 10000 DAIxETH`$. Solving for $`x`$ gives $`x = 10000 DAIxETH / 95 DAI - 100ETH`$. Hence, $`x = 5.263158 ETH`$. This price seems reasonable because we started with a 1:1 ration of DAI and ETH. If one asset has high demand, the liquidity pool will have less and less of this asset. Hence, it gets more and more expensive.
+First, let us focus on the trader who wants to buy 5 DAI for ETH. Given the function above and the example liquidity of 100 DAI and 100 ETH on the exchange, the trader can calculate the price they have to pay for 5 DAI. The simple rule is: Keep the product constant. Hence, after the trade the product still needs to be $`10000_DAIxETH`$. Let's see how much ETH the trader needs to put into the ETH liquidity pool to take out 5 DAI and keep the product constant. This can easily be calculated by $`100_DAI - 5_DAI * 100_ETH + x_ETH = 10000 DAIxETH`$. We substract $`5_DAI`$ because they are taken out of the pool. We add $`x_ETH`$ because that is what the trader needs to pay (put into the pool) for taking the $`5_DAI`$ out. Solving for $`x_ETH`$ gives $`x_ETH = 10000_DAIxETH / 95_DAI - 100_ETH`$. Hence, $`x_ETH = 5.263158_ETH`$. This price seems reasonable because we started with a 1:1 ration of DAI and ETH. If one asset has high demand, the liquidity pool will have less and less of this asset. Hence, it gets more and more expensive.
 Below there are further example trades and how the price changes.
 
 *Illustration or Table*

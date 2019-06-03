@@ -27,7 +27,13 @@ I do not want to call it a new type because I do not know if they are new FOOTNO
 
 A market without an orderbook. How does the CPMMM work?
 We will summarize the Constant Product Market Maker Model briefly. For further information, please refer to the provided links at the end of the article TODO FOOTNOTE. In [Uniswap](https://uniswap.io/) there is no order book. Their CPMMM always provide liquidity. The price is a function depending on supply and demand. Given a pair of assets $`Asset_A`$ and $`Asset_B`$ e.g. DAI and ETH. The function is:
-$`supplyAsset_A*supplyAsset_B=C`$ The $`supplyAsset_A`$ is the amount of Asset A currently available on the exchange and the same applies to Asset B. The product is some value $`C`$. For example $`100 DAI x 100 ETH = 10000 DAIxETH`$. So far, so good.
+$`supplyAsset_A*supplyAsset_B=C`$ 
+
+The $`supplyAsset_A`$ is the amount of Asset A currently available on the exchange and the same applies to Asset B. 
+
+The product is some value $`C`$. 
+
+For example $`100 DAI x 100 ETH = 10000 DAIxETH`$. So far, so good.
 
 Two participants exist on [Uniswap](https://uniswap.io/). So called **liquidity provider** and the **common traders**. 
 First, let us focus on the trader who wants to buy 5 DAI for ETH. Given the function above and the example liquidity of 100 DAI and 100 ETH on the exchange, the trader can calculate the price they have to pay for 5 DAI. The simple rule is: Keep the product constant. Hence, after the trade the product still needs to be 10000 DAIxETH. Let's see how much ETH the trader needs to put into the ETH liquidity pool to take out 5 DAI and keep the product constant. This can easily be calculated by $`100 DAI - 5 DAI (the amount the trader did take) * 100 + x (the amount the trader needs to put in the pool for taking out 5 DAI) = 10000 DAIxETH`$. Solving for $`x`$ gives $`x = 10000 DAIxETH / 95 DAI - 100ETH`$. Hence, $`x = 5.263158 ETH`$. This price seems reasonable because we started with a 1:1 ration of DAI and ETH. If one asset has high demand, the liquidity pool will have less and less of this asset. Hence, it gets more and more expensive.

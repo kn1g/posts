@@ -39,13 +39,13 @@ The product is some value $`C`$.
 For example: $`100_{DAI} x 100_{ETH} = 10000_{DAIxETH}`$. So far, so good.
 
 Two participants exist on [Uniswap](https://uniswap.io/). So called **liquidity provider** and the **common traders**. 
-First, let us focus on the trader who wants to buy $`5_{DAI}`$ for $`_{ETH}`$. Given the function above and the example liquidity of $`100_{DAI}`$ and $`100_{ETH}`$ on the exchange, the trader can calculate the price they have to pay for $`5_{DAI}`$. The simple rule is: Keep the product constant. Hence, after the trade the product still needs to be $`10000_{DAIxETH}`$. Let's see how much ETH the trader needs to put into the ETH liquidity pool to take out 5 DAI and keep the product constant. This can easily be calculated by $`100_{DAI} - 5_{DAI} * 100_{ETH} + x_{ETH} = 10000_{DAIxETH}`$. We substract $`5_{DAI}`$ because they are taken out of the pool. We add $`x_{ETH}`$ because that is what the trader needs to pay (put into the pool) for taking the $`5_{DAI}`$ out. Solving for $`x_{ETH}`$ gives $`x_{ETH} = 10000_{DAIxETH} / 95_{DAI} - 100_{ETH}`$. Hence, $`x_{ETH} = 5.263158_{ETH}`$. This price seems reasonable because we started with a 1:1 ration of DAI and ETH. If one asset has high demand, the liquidity pool will have less and less of this asset. Hence, it gets more and more expensive.
+First, let us focus on the trader who wants to buy $`5_{DAI}`$ for $`ETH`$. Given the function above and the example liquidity of $`100_{DAI}`$ and $`100_{ETH}`$ on the exchange, the trader can calculate the price they have to pay for $`5_{DAI}`$. The simple rule is: Keep the product constant. Hence, after the trade the product still needs to be $`10000_{DAIxETH}`$. Let's see how much ETH the trader needs to put into the ETH liquidity pool to take out $`5_{DAI}`$ and keep the product constant. This can easily be calculated by $`100_{DAI} - 5_{DAI} * 100_{ETH} + x_{ETH} = 10000_{DAIxETH}`$. We substract $`5_{DAI}`$ because they are taken out of the pool. We add $`x_{ETH}`$ because that is what the trader needs to pay (put into the pool) for taking the $`5_{DAI}`$ out. Solving for $`x_{ETH}`$ gives $`x_{ETH} = 10000_{DAIxETH} / 95_{DAI} - 100_{ETH}`$. Hence, $`x_{ETH} = 5.263158_{ETH}`$. This price seems reasonable because we started with a 1:1 ration of DAI and ETH. If one asset has high demand, the liquidity pool will have less and less of this asset. Hence, it gets more and more expensive.
 Below there are further example trades and how the price changes.
 
 *Illustration or Table*
 
-Above, we assumed an initial liquidity pool aka supply of 100 DAI and 100 ETH. Where did this come from? Let us look behind the scenes and see how liquidity is added to an exchange contract. Therefore, so called liquidity provider can deposit DAI and ETH into the liquidity pool. Let us assume a newly created exchange. No DAI and no ETH liquidity is deposited. Liquidity provider, as the name suggests, provide liquidity. But it is a little bit different to what most readers might be used. A liquidity provider always needs to provide both assets. In our example they need to provide ETH and DAI.
-A liquidity provider cannot just add ETH or DAI. This would not make sense in the CPMM model. Hence, the liquidity provider needs to deposit liquidity for both sides. In our example they need to add ETH and DAI in the correct ratio. The correct ratio is given by the current price. Let us assume the price is 10 DAI/ETH. Hence, they need to deposit ten times more DAI than ETH. E.g. 1000 DAI and 100 ETH. If the price does not change, the next liquidity provider will add liquidity for both assets in the same ratio. If the price changes the liquidity provider will adjust the ratio. In case, they would not, arbitrageurs will immediately correct the price. 
+Above, we assumed an initial liquidity pool aka supply of $`100_{DAI}`$ and $`100_{ETH}`$. Where did this come from? Let us look behind the scenes and see how liquidity is added to an exchange contract. Therefore, so called liquidity provider can deposit DAI and ETH into the liquidity pool. Let us assume a newly created exchange. No DAI and no ETH liquidity is deposited. Liquidity provider, as the name suggests, provide liquidity. But it is a little bit different to what most readers might be used. A liquidity provider always needs to provide both assets. In our example they need to provide ETH and DAI.
+A liquidity provider cannot just add ETH or DAI. This would not make sense in the CPMM model. Hence, the liquidity provider needs to deposit liquidity for both sides. In our example they need to add ETH and DAI in the correct ratio. The correct ratio is given by the current price. Let us assume the price is $`10_{DAI/ETH}`$. Hence, they need to deposit ten times more DAI than ETH. E.g. $`1000_{DAI}`$ and $`100_{ETH}`$. If the price does not change, the next liquidity provider will add liquidity for both assets in the same ratio. If the price changes the liquidity provider will adjust the ratio. In case, they would not, arbitrageurs will immediately correct the price. 
 
 *Illustration*
 
@@ -53,7 +53,7 @@ Liquidity provider get so called liquidity token to keep track of their stake in
 
 Implications and drawbacks
 
-The attentive reader will quickly realize that liquidity provider, in contrast to traders, are exposed to a risk. Additionally, they need to lock down their funds to provide the liquidity. Hence, they do have opportunity costs for the locked down capital. Therefore, it will not be discussed further. Therefore, let's check the risk a liquidity provider bears. In this example let's assume the fair value of 1 DAI is 1 ETH (I know... it's for illustration purpose only).
+The attentive reader will quickly realize that liquidity provider, in contrast to traders, are exposed to a risk. Additionally, they need to lock down their funds to provide the liquidity. Hence, they do have opportunity costs for the locked down capital. Therefore, it will not be discussed further. Therefore, let's check the risk a liquidity provider bears. In this example let's assume the fair value of $`1_{DAI}`$ is $`1_{ETH}`$ (I know... it's for illustration purpose only).
 
 Scenario 1:
      No trades happen
@@ -76,7 +76,7 @@ Total value in
 <Kurvenbild>
 
 
-In $`t_3`$ the liquidity provider withdraws his funds and gets back what he put in initially (100 DAI and 100 ETH). Hence, the liquidity provider only has opportunity costs because they did not earn any interest on the capital in this time. The opportunity cost for locked down capital is pretty obvious. The liquidity provider could use the capital and e.g. earn interest rates on it (e.g. on compound.finance or xxx). 
+In $`t_3`$ the liquidity provider withdraws his funds and gets back what he put in initially ($`100_{DAI}`$ and $`100_{ETH}`$). Hence, the liquidity provider only has opportunity costs because they did not earn any interest on the capital in this time. The opportunity cost for locked down capital is pretty obvious. The liquidity provider could use the capital and e.g. earn interest rates on it (e.g. on compound.finance or xxx). 
 
 Scenario 2:
      Trader 1 buys 5 DAI for ETH.
@@ -109,6 +109,7 @@ Scenario 3:
 | 100 ETH | 105.263158 ETH | 111.111 ETH | 111.111 ETH |
 
 Total value in 
+
 | DAI | ETH | mixed |
 | -------- | -------- | -------- |
 | $`90_{DAI} + 111.111_{ETH} / 5.84795_{ETH/DAI} *5 = 185_{DAI}`$ | $`90_{DAI}*(5.263158_{DAI/ETH}/5) + 111.111_{ETH} = 216.3741_{ETH}`$ | 99.49991_{DAI} 100_{ETH} |

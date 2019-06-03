@@ -5,15 +5,17 @@ Part 1 - General Introduction and Uniswap
 
 Cryptoprojects often praise themselves as disruptive "all new" projects. If you take a look behind the scenes, in most projects disruption becomes disillusion. Scam, bad copy-cats, ideas far beyond reality, mooning marketing concepts and "making already existing solutions just more inefficient", is predominant in the blockchain scene. Fortunately, people got more and more suspicious after the first bubble bursted. Hence, it became harder for bullshit to survive and more and more promising projects evolve. But are these project really disruptive? Do they have the potential to take over what we used to know? 
 
-I am a finance PhD student - currently employed as an auditor at Chainsecurity (one of the leading blockchain security companies in the world). We audit big projects and get unique insights into them. I will introduce my favorite (often - but not only finance related) projects in my blog series **Disruption or disillusion?**. If you are interested follow me @ecofork (twitter) or subscribe here. Please, don't let this be a one-man show and start a lively discussion about these topics. 
+I am a finance PhD student - currently employed as an auditor at Chainsecurity (one of the leading blockchain security companies in the world). We audit big projects and get unique insights into them. I will introduce my favorite (often - but not only finance related) projects in my blog series: **Disruption or disillusion?** If you are interested follow me @ecofork (twitter) or subscribe here. Please, don't let this be a one-man show and start a lively discussion about these topics. 
 Topic: **Upcoming Exchange concepts - A farewell to the order book?** *Part 1 - General Introduction and Uniswap*
 
-Quick reminder on how common markets are classified and how they work. If you know it, feel free to skip this part. We usually differ between three different market types. 
+Quick reminder on how common markets are classified and how they work. If you know it, feel free to skip this part. 
+
+We usually differ between three different market types. 
 -   Dealer market
 -   Broker market
 -   Exchange
 
-We won't go into detail here for Dealer and broker markets. This can be looked up quickly in the linked articles TODO. Let us set the focus Exchanges (very high-level and simplified). Exchanges try to connect the two parties (buyer and seller) directly. Usually done by an auction based market. In an auction based market buyers enter competitive bids and sellers submit competitive offers. The exchange keeps track of all bids and offers (asks) in a so called order book. The exchanges try to match two orders if possible. The current price is the price where the last bid/ask match was possible. The bid ask spread is the price different between the bid and ask orders closest to the current price.
+We won't go into detail here for Dealer and broker markets. This can be looked up quickly in the [linked articles][1 2]. Let us set the focus Exchanges (very high-level and simplified). Exchanges try to connect the two parties (buyer and seller) directly. Usually done by an auction based market. In an auction based market buyers enter competitive bids and sellers submit competitive offers. The exchange keeps track of all bids and offers (asks) in a so called order book. The exchanges try to match two orders if possible. The current price is the price where the last bid/ask match was possible. The bid ask spread is the price different between the bid and ask orders closest to the current price.
 The example below illustrates an order-book with trades.
 
 <Illustration>
@@ -131,7 +133,8 @@ Upcoming topics:
    -  How is the code implementation?
    -  Bancor another concept
 
-
+[1] https://www.investopedia.com/terms/d/dealersmarket.asp
+[2] https://www.investopedia.com/ask/answers/06/brokerandmarketmaker.asp
 ----------------------------------------------------------
 
 Value on another Exchange

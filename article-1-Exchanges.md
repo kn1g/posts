@@ -8,7 +8,7 @@ Cryptoprojects often praise themselves as disruptive "all new" projects. If you 
 I am a finance PhD student - currently employed as an auditor at Chainsecurity (one of the leading blockchain security companies in the world). We audit big projects and get unique insights into them. I will introduce my favorite (often - but not only finance related) projects in my blog series: **Disruption or disillusion?** If you are interested follow me @ecofork (twitter) or subscribe here. Please, don't let this be a one-man show and start a lively discussion about these topics. 
 Topic: **Upcoming Exchange concepts - A farewell to the order book?** *Part 1 - General Introduction and Uniswap*
 
-Quick reminder on how common markets are classified and how they work. If you know it, feel free to skip the next three paragraphs. 
+Quick reminder on how common markets are classified and how they work. If you know it, feel free to skip the next two paragraphs. 
 
 We usually differ between three different market types. 
 -   Dealer market
@@ -22,12 +22,15 @@ The example below illustrates an order-book with trades. Here are is a [Youtube 
 
 The description above is very high-level but it is not necessary to go into further detail here. Just some quick addition: There are different ways to match the orders and the auction implementation may vary a little. Even though, it might be a little too general, let us refer to these types of exchanges "order book based" (sometimes referred as Central Limit Order Book CLOB - I did not want to use this term because it can be misleading) exchanges.
 
-Exchanges (Order book based), brokers and dealer markets is what we are used to, in common finance. But there is more. Besides [Request for quotation (RFQ)][4] exchanges which might still sound familiar to some ([KYBER](https://kyber.network/) and [AIRSWAP](https://www.airswap.io/) are using this technique), there are projects like [Uniswap](https://uniswap.io/) and [Bancor](https://www.bancor.network/). This article will focus on [Uniswap](https://uniswap.io/). A project which has enormous support in the community. It is backed by the Ethereum Foundation and has lately been funded by Paradigma FOOTNOTE(https://www.theblockcrypto.com/2019/04/23/paradigm-backs-decentralized-exchange-protocol-uniswap/). To make markets they use a deterministic function. They call this technique Constant Product Market Maker Model (CPMMM). This describes pretty exactly what they do.
-I do not want to call it a new type because I do not know if they are new FOOTNOTE PLEASE CONTACT ME IF YOU HAVE INFORMATION. Most likely this technique has been around for quite some time but lead an obscure existence. 
+Exchanges (Order book based), brokers and dealer markets is what we are used to, in common finance. But there is more. Besides [Request for quotation (RFQ)][4] exchanges which might still sound familiar to some ([KYBER](https://kyber.network/) and [AIRSWAP](https://www.airswap.io/) are using this technique), there are projects like [Uniswap](https://uniswap.io/) and [Bancor](https://www.bancor.network/). This article will focus on [Uniswap](https://uniswap.io/). A project which has enormous support in the community and [increasing volume]5. It is backed by the Ethereum Foundation and has lately been [funded by Paradigma][https://www.theblockcrypto.com/2019/04/23/paradigm-backs-decentralized-exchange-protocol-uniswap/]. To make markets they use a deterministic function. They call this technique **Constant Product Market Maker Model (CPMMM)**. This describes pretty exactly what they do.
+I do not want to call it a new type because I do not know if they are new (PLEASE CONTACT ME IF YOU HAVE INFORMATION). Most likely this technique has been around for quite some time but lead an obscure existence. 
 
-A market without an orderbook. How does the CPMMM work?
-We will summarize the Constant Product Market Maker Model briefly. For further information, please refer to the provided links at the end of the article TODO FOOTNOTE. In [Uniswap](https://uniswap.io/) there is no order book. Their CPMMM always provide liquidity. The price is a function depending on supply and demand. Given a pair of assets $`Asset_A`$ and $`Asset_B`$ e.g. DAI and ETH. The function is:
-$`supplyAsset_A*supplyAsset_B=C`$ 
+*A market without an orderbook. How does the CPMMM work?*
+
+I will summarize the Constant Product Market Maker Model briefly. For further information, please refer to the provided links at the end of the article TODO FOOTNOTE. In [Uniswap](https://uniswap.io/) there is no order book. The CPMMM always provide liquidity. The price is a function depending on supply and demand. Given a pair of assets $`Asset_A`$ and $`Asset_B`$ e.g. DAI and ETH. The function is:
+```math
+supplyAsset_A*supplyAsset_B=C
+```
 
 The $`supplyAsset_A`$ is the amount of Asset A currently available on the exchange and the same applies to Asset B. 
 
@@ -143,6 +146,7 @@ Upcoming topics:
 [2]: https://en.wikipedia.org/wiki/Order_book_(trading)
 [3]: https://www.youtube.com/watch?v=Iaiw5iGjXbw
 [4]: https://www.investopedia.com/terms/r/request-for-quote.asp
+[5]: https://mikemcdonald.github.io/eth-defi/
 ----------------------------------------------------------
 
 Value on another Exchange

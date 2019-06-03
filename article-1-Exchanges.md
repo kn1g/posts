@@ -133,8 +133,8 @@ Upcoming topics:
    -  How is the code implementation?
    -  Bancor another concept
 
-[1] https://www.investopedia.com/terms/d/dealersmarket.asp
-[2] https://www.investopedia.com/ask/answers/06/brokerandmarketmaker.asp
+[1]: https://www.investopedia.com/terms/d/dealersmarket.asp und https://www.investopedia.com/ask/answers/06/brokerandmarketmaker.asp
+
 ----------------------------------------------------------
 
 Value on another Exchange

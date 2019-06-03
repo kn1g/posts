@@ -144,9 +144,13 @@ Upcoming topics:
    -  Bancor another concept
 
 [1]: https://www.investopedia.com/terms/d/dealersmarket.asp und https://www.investopedia.com/ask/answers/06/brokerandmarketmaker.asp
+
 [2]: https://en.wikipedia.org/wiki/Order_book_(trading)
+
 [3]: https://www.youtube.com/watch?v=Iaiw5iGjXbw
+
 [4]: https://www.investopedia.com/terms/r/request-for-quote.asp
+
 [5]: https://mikemcdonald.github.io/eth-defi/
 
 ----------------------------------------------------------

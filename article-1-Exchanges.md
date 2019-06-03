@@ -1,9 +1,7 @@
-Disruption or disillusion? 
-
+# Disruption or disillusion? 
 *Upcoming Exchange concepts.*
 
-Uniswap - A farewell to the order book?
-
+## Uniswap - A farewell to the order book?
 Part 1 - Introduction
 
 Cryptoprojects often praise themselves as disruptive all new projects. If you take a look behind the scenes, in most projects disruption becomes disillusion. Scam, bad copy-cats, ideas far beyond reality, mooning marketing concepts and "making already existing solutions just more inefficient", is predominant in the blockchain world. Fortunately, people got more and more suspicious after the first bubble bursted. Hence, it became harder for bullshit to survive and more and more promising projects evolve. But are these project really disruptive? Do they have the potential to take over what we used to know? 

@@ -39,7 +39,7 @@ The product is some value $`C`$.
 For example: $`100_{DAI} x 100_{ETH} = 10000_{DAIxETH}`$. So far, so good.
 
 Two participants exist on [Uniswap](https://uniswap.io/). So called **liquidity provider** and the **common traders**. 
-First, let us focus on the trader who wants to buy 5 DAI for ETH. Given the function above and the example liquidity of $`100_{DAI}`$ and $`100_{ETH}`$ on the exchange, the trader can calculate the price they have to pay for $`5_{DAI}`$. The simple rule is: Keep the product constant. Hence, after the trade the product still needs to be $`10000_DAIxETH`$. Let's see how much ETH the trader needs to put into the ETH liquidity pool to take out 5 DAI and keep the product constant. This can easily be calculated by $`100_{DAI} - 5_{DAI} * 100_{ETH} + x_{ETH} = 10000_{DAIxETH}`$. We substract $`5_{DAI}`$ because they are taken out of the pool. We add $`x_{ETH}`$ because that is what the trader needs to pay (put into the pool) for taking the $`5_{DAI}`$ out. Solving for $`x_{ETH}`$ gives $`x_{ETH} = 10000_{DAIxETH} / 95_{DAI} - 100_{ETH}`$. Hence, $`x_{ETH} = 5.263158_{ETH}`$. This price seems reasonable because we started with a 1:1 ration of DAI and ETH. If one asset has high demand, the liquidity pool will have less and less of this asset. Hence, it gets more and more expensive.
+First, let us focus on the trader who wants to buy $`5_{DAI}`$ for $`_{ETH}`$. Given the function above and the example liquidity of $`100_{DAI}`$ and $`100_{ETH}`$ on the exchange, the trader can calculate the price they have to pay for $`5_{DAI}`$. The simple rule is: Keep the product constant. Hence, after the trade the product still needs to be $`10000_{DAIxETH}`$. Let's see how much ETH the trader needs to put into the ETH liquidity pool to take out 5 DAI and keep the product constant. This can easily be calculated by $`100_{DAI} - 5_{DAI} * 100_{ETH} + x_{ETH} = 10000_{DAIxETH}`$. We substract $`5_{DAI}`$ because they are taken out of the pool. We add $`x_{ETH}`$ because that is what the trader needs to pay (put into the pool) for taking the $`5_{DAI}`$ out. Solving for $`x_{ETH}`$ gives $`x_{ETH} = 10000_{DAIxETH} / 95_{DAI} - 100_{ETH}`$. Hence, $`x_{ETH} = 5.263158_{ETH}`$. This price seems reasonable because we started with a 1:1 ration of DAI and ETH. If one asset has high demand, the liquidity pool will have less and less of this asset. Hence, it gets more and more expensive.
 Below there are further example trades and how the price changes.
 
 *Illustration or Table*
@@ -92,11 +92,11 @@ Total value in
 | -------- | -------- | -------- |
 | $`95_{DAI} + 105.263158_{ETH} / 5.263158_{ETH/DAI} *5=195_{DAI}`$ | $`95_{DAI}*(5.263158_{ETH/DAI}/5) + 105.263158_{ETH} = 205.263158_{ETH}`$ | 100 DAI 100 ETH |
 
-(Assuming another exchange provides enough volume at the current $`(5.263158 ETH/5) = 1 DAI`$ price. Because, in case, the liquidity provider is the only one, another exchange is needed to convert the corresponding funds.)
+(Assuming another exchange provides enough volume at the current $`(5.263158_{ETH}/5) = 1_{DAI}`$ price. Because, in case, the liquidity provider is the only one, another exchange is needed to convert the corresponding funds.)
 
 <Kurvenbild>
 
-This time, the liquidity provider gets 95 ETH and 105.263158 ETH back. Now DAI is worth more than ETH. Therefore, the total value in DAI or ETH changes according to the currency used for evaluation. But overall, the value does not change. As before, the liquidity provider only has opportunity costs.
+This time, the liquidity provider gets $`95_{DAI}`$ and $`105.263158_{ETH}`$ back. Now DAI is worth more than ETH. Therefore, the total value in DAI or ETH changes according to the currency used for evaluation. But overall, the value does not change. As before, the liquidity provider only has opportunity costs.
 
 
 Scenario 3:
@@ -113,11 +113,11 @@ Total value in
 | -------- | -------- | -------- |
 | $`90_{DAI} + 111.111_{ETH} / 5.84795_{ETH/DAI} *5 = 185_{DAI}`$ | $`90_{DAI}*(5.263158_{DAI/ETH}/5) + 111.111_{ETH} = 216.3741_{ETH}`$ | 99.49991_{DAI} 100_{ETH} |
 
-(Assuming another exchange provides enough volume at the current $`(5.263158 ETH/5) = 1 DAI`$ price. Because, in case, the liquidity provider is the only one, another exchange is needed to convert the corresponding funds.)
+(Assuming another exchange provides enough volume at the current $`(5.263158_{ETH}/5) = 1_{DAI}`$ price. Because, in case, the liquidity provider is the only one, another exchange is needed to convert the corresponding funds.)
 
 <Kurvenbild>
 
-Now, it gets interesting. The liquidity provider would get back 90 DAI and 111.111 ETH. But in total the liquidity provider lost $`0.50009`$ DAI (or the corresponding amount in ETH). This is the additional risk the liquidity provider bears. To get back his initual investment the liquidity provider always needs to trade the asset which lost worth against the one which gained worth. As soon as the price starts moving into one direction, the liquidity provider will get the latest (but worst) price, to trade back his funds. In case the latest price was not the price to which all trades happened, a loss will be the result. In our example there was one trade at $`5.263158 ETH/DAI`$ and one at $`5.84795 ETH/DAI`$. To get back the initial investment of 100 DAI and 100 ETH the liquidity provider would need to trade $`5 ETH`$ at $`5.84795 ETH/DAI`$ and 5 at $`5.263158 ETH/DAI`$. But  $`5.263158 ETH/DAI`$ is history. The current exchange rate is $`5.84795 ETH/DAI`$ and therefore, worse. Hence, the liquidity provider needs to exchange $`10 ETH`$ at $`5.84795 ETH/DAI`$ and the loss occurs. The loss increases if more trades happened at a more favorable price and/or the price gap increases between the last price and the prices before.
+Now, it gets interesting. The liquidity provider would get back $`90_{DAI}`$ and $`111.111_{ETH}`$. But in total the liquidity provider lost $`0.50009_{DAI}`$ (or the corresponding amount in ETH). This is the additional risk the liquidity provider bears. To get back his initial investment the liquidity provider always needs to trade the asset which lost worth against the one which gained worth. As soon as the price starts moving into one direction, the liquidity provider will get the latest (but worst) price, to trade back his funds. In case the latest price was not the price to which all trades happened, a loss will be the result. In our example there was one trade at $`5.263158_{ETH/DAI}`$ and one at $`5.84795_{ETH/DAI}`$. To get back the initial investment of $`100_{DAI}`$ and $`100_{ETH}`$ the liquidity provider would need to trade $`5_{ETH}`$ at $`5.84795_{ETH/DAI}`$ and $`5_{ETH}`$ at $`5.263158_{ETH/DAI}`$. But  $`5.263158_{ETH/DAI}`$ is history. The current exchange rate is $`5.84795_{ETH/DAI}`$ and therefore, worse. Hence, the liquidity provider needs to exchange $`10_{ETH}`$ at $`5.84795_{ETH/DAI}`$ and the loss occurs. The loss increases if more trades happened at a more favorable price and/or the price gap increases between the last price and the prices before.
 
 What is the compensation for someone to become a liquidity provider? They do get a fee which is charged with each trade. The million dollar question is, if or when do the fees compensate the risk plus the opportunity costs.
 

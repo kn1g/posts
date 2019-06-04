@@ -15,7 +15,7 @@ We usually differ between three different market types.
 -   Broker market
 -   Exchange
 
-We won't go into detail here for Dealer and broker markets. This can be looked up quickly in the [linked articles][1]. Let us focus on Exchanges (very high-level and simplified). Exchanges try to connect the two parties (buyer and seller) directly. Usually done by an auction based market. In an auction based market buyers enter competitive bids and sellers submit competitive offers. The exchange keeps track of all bids and offers (asks) in a so called [orderbook][2]. An exchange tries to match two orders if possible. The current price is the price where the last bid/ask match was possible. The bid ask spread is the price different between the bid and ask orders closest to the current price.
+We won't go into detail here for Dealer and broker markets. This can be looked up quickly in the [linked articles][1]. Let us focus on Exchanges (very high-level and simplified). Exchanges try to connect the two parties (buyer and seller) directly. Usually done by an auction based market. In an auction based market buyers enter competitive bids and sellers submit competitive offers. The exchange keeps track of all bids and offers (asks) in a so called [orderbook](https://en.wikipedia.org/wiki/Order_book_(trading)). An exchange tries to match two orders if possible. The current price is the price where the last bid/ask match was possible. The bid ask spread is the price different between the bid and ask orders closest to the current price.
 The example below illustrates an order-book with trades. Here are is a [Youtube video][3].
 
 *Illustration*
@@ -56,6 +56,7 @@ Implications and drawbacks
 The attentive reader will quickly realize that liquidity provider, in contrast to traders, are exposed to a risk. Additionally, they need to lock down their funds to provide the liquidity. Hence, they do have opportunity costs for the locked down capital. Therefore, it will not be discussed further. Therefore, let's check the risk a liquidity provider bears. In this example let's assume the fair value of $`1_{DAI}`$ is $`1_{ETH}`$ (I know... it's for illustration purpose only).
 
 *Scenario 1:*
+
      No trades happen
 
 Value on Uniswap
@@ -79,6 +80,7 @@ Total value in
 In $`t_3`$ the liquidity provider withdraws his funds and gets back what he put in initially ($`100_{DAI}`$ and $`100_{ETH}`$). Hence, the liquidity provider only has opportunity costs because they did not earn any interest on the capital in this time. The opportunity cost for locked down capital is pretty obvious. The liquidity provider could use the capital and e.g. earn interest rates on it (e.g. on compound.finance or xxx). 
 
 *Scenario 2:*
+
      Trader 1 buys 5 DAI for ETH.
 
 | $`t_0`$ | $`t_1`$ | $`t_2`$ | $`t_3`$ |
@@ -99,8 +101,10 @@ Total value in
 This time, the liquidity provider gets $`95_{DAI}`$ and $`105.263158_{ETH}`$ back. Now DAI is worth more than ETH. Therefore, the total value in DAI or ETH changes according to the currency used for evaluation. But overall, the value does not change. As before, the liquidity provider only has opportunity costs.
 
 
-Scenario 3:
+*Scenario 3:*
+
      Trader 1 buys 5 DAI for ETH (5.263158 ETH/DAI).
+     
      Trader 2 buys 5 DAI for ETH (5.84795  ETH/DAI).
 
 | $`t_0`$ | $`t_1`$ | $`t_2`$ | $`t_3`$ |
@@ -118,21 +122,36 @@ Total value in
 
 <Kurvenbild>
 
-Now, it gets interesting. The liquidity provider would get back $`90_{DAI}`$ and $`111.111_{ETH}`$. But in total the liquidity provider lost $`0.50009_{DAI}`$ (or the corresponding amount in ETH). This is the additional risk the liquidity provider bears. To get back his initial investment the liquidity provider always needs to trade the asset which lost worth against the one which gained worth. As soon as the price starts moving into one direction, the liquidity provider will get the latest (but worst) price, to trade back his funds. In case the latest price was not the price to which all trades happened, a loss will be the result. In our example there was one trade at $`5.263158_{ETH/DAI}`$ and one at $`5.84795_{ETH/DAI}`$. To get back the initial investment of $`100_{DAI}`$ and $`100_{ETH}`$ the liquidity provider would need to trade $`5_{ETH}`$ at $`5.84795_{ETH/DAI}`$ and $`5_{ETH}`$ at $`5.263158_{ETH/DAI}`$. But  $`5.263158_{ETH/DAI}`$ is history. The current exchange rate is $`5.84795_{ETH/DAI}`$ and therefore, worse. Hence, the liquidity provider needs to exchange $`10_{ETH}`$ at $`5.84795_{ETH/DAI}`$ and the loss occurs. The loss increases if more trades happened at a more favorable price and/or the price gap increases between the last price and the prices before.
+Now, it gets interesting. The liquidity provider would get back $`90_{DAI}`$ and $`111.111_{ETH}`$. But in total the liquidity provider lost $`0.50009_{DAI}`$ (or the corresponding amount in ETH). This is the additional risk the liquidity provider bears. To get back his initial investment the liquidity provider always needs to trade the asset which lost worth against the one which gained worth. As soon as the price starts moving into one direction, the liquidity provider will get the latest (but worst) price, to trade back his funds. In case the latest price was not the price to which all trades happened, a loss will be the result. In our example there was one trade at $`5.263158_{ETH/DAI}`$ and one at $`5.84795_{ETH/DAI}`$. To get back the initial investment of $`100_{DAI}`$ and $`100_{ETH}`$ the liquidity provider would need to trade $`5.84795_{ETH}`$ for $`5_{DAI}`$ and $`5.263158_{ETH}`$ for another $`5_{DAI}`$. But $`5.263158_{ETH/DAI}`$ is history. The current exchange rate is $`5.84795_{ETH/DAI}`$ and therefore, worse. Hence, the liquidity provider needs to exchange $`11.111_{ETH}`$ at $`5.84795_{ETH/DAI}`$. Thus, they lose $`0.5000898=10-11.111/5.84795*5`$. The loss increases if more trades happened at a more favorable price and/or the price gap increases between the last price and the prices before.
 
 What is the compensation for someone to become a liquidity provider? They do get a fee which is charged with each trade. The million dollar question is, if or when do the fees compensate the risk plus the opportunity costs.
 
 
 I do not want to write the articles too long. Therefore, I will stop here. 
 
-What makes Uniswap so interesting? Pros?
+What makes Uniswap so interesting? 
 
-Cons?
+Pros:
+
+   -   simplicity
+   -   always liquidity
+   -   ...
+
+Cons:
+
+   -   No limit orders
+   -   ...
 
 Conclusion
-Is it a thread for real world exchanges? 
-Where are the limits?
-What research can be done?
+
+To be done
+
+I love the simplicity and als the research opportunity that come up with the CPMM. It totally changes the market microstructure. Deterministic price changes and the transparent structure make it (imho) to an amazing research topic. (TBD maybe mention paper project topics) Can you come up with more research topics?
+
+Right now, Uniswap does not want to replace existing exchanges (Link). Furthermore, they see themselves as a kind of supplementary exchange and welcome arbitrage traders to adjust the prices.
+Hence, Uniswap is depended on other exchanges to keep the rates balanced.
+Uniswap is still beta and highly experimental. But this also makes it extremely interesting to think about, when it could break or collapse. 
+In the end, it would be interesting if Uniswap theoretically could replace existing exchange/markets types. Would this be a market type which could make it out of the crypto space and disrupt the predominant exchange types? Has it major drawbacks or limits? What do you think?
 
 If you like this article please subscribe. Tell me if you additionally would prefer podcasts or Youtube videos.
 
@@ -145,14 +164,29 @@ Upcoming topics:
 
 [1]: https://www.investopedia.com/terms/d/dealersmarket.asp und https://www.investopedia.com/ask/answers/06/brokerandmarketmaker.asp
 
-[2]: https://en.wikipedia.org/wiki/Order_book_(trading)
-
 [3]: https://www.youtube.com/watch?v=Iaiw5iGjXbw
 
 [4]: https://www.investopedia.com/terms/r/request-for-quote.asp
 
 [5]: https://mikemcdonald.github.io/eth-defi/
 
+----------------------------------------------------------
+Part 2 - When does it make sense to be a liquidity provider on Uniswap
+
+In the first part, we covered the very basics of Uniswap. An exchange which has no Orderbook but a so called Constant Product Market Model (CPMM). It's simplicity is what makes it elegant. If you missed the first part, you can find it [here]().
+
+----------------------------------------------------------
+Part 3 - Uniswap's Market-microstructure and some theory
+
+----------------------------------------------------------
+Part 4 - How to use Uniswap
+
+----------------------------------------------------------
+Part 5 - Uniswap's code implementation
+
+
+
+----------------------------------------------------------
 ----------------------------------------------------------
 
 NOTES LEFT OVERS AND REMINDERS - DELETE FOR LIVE VERSION

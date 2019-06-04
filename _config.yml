@@ -17,8 +17,8 @@ title: Characters from TheKangaFoo
 email: info@thekangafoo.com
 description: >- # this means to ignore newlines until "baseurl:"
   Blockchain Security Fintech Finance
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/posts" # the subpath of your site, e.g. /blog
+url: "https://kn1g.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: thekangafoo
 github_username:  kn1g
 

@@ -1,12 +1,23 @@
 ---
 layout: post
+mathjax: true
+date:   2019-04-04 14:15:00 +0000
 title:  "Disruption or disillusion? / Upcoming Exchange concepts - A farewell to the order book? / Part 1"
 ---
+
 
 # Disruption or disillusion? 
 
 ## Upcoming Exchange concepts - A farewell to the order book?
 Part 1 - General Introduction and Uniswap
+
+WTF \( Thi_i Math \)
+
+This is fuching $ann_iing$
+
+\( balbl_SAdsad_as \)
+
+$$mean = \frac{\displaystyle\sum_{i=1}^{n} x_{i}}{n}$$
 
 Cryptoprojects often praise themselves as disruptive "all new" projects. If you take a look behind the scenes, in most projects disruption becomes disillusion. Scam, bad copy-cats, ideas far beyond reality, mooning marketing concepts and "making already existing solutions just more inefficient", is predominant in the blockchain scene. Fortunately, people got more and more suspicious after the first bubble bursted. Hence, it became harder for bullshit to survive and more and more promising projects evolve. But are these project really disruptive? Do they have the potential to take over what we used to know? 
 

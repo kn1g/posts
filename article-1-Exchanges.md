@@ -57,7 +57,7 @@ The attentive reader will quickly realize that liquidity provider, in contrast t
 
 *Scenario 1:*
 
-     No trades happen
+No trades happen
 
 Value on Uniswap
 
@@ -81,7 +81,7 @@ In $`t_3`$ the liquidity provider withdraws his funds and gets back what he put 
 
 *Scenario 2:*
 
-     Trader 1 buys 5 DAI for ETH.
+Trader 1 buys 5 DAI for ETH.
 
 | $`t_0`$ | $`t_1`$ | $`t_2`$ | $`t_3`$ |
 | -------- | -------- | -------- | -------- |
@@ -103,9 +103,9 @@ This time, the liquidity provider gets $`95_{DAI}`$ and $`105.263158_{ETH}`$ bac
 
 *Scenario 3:*
 
-     Trader 1 buys 5 DAI for ETH (5.263158 ETH/DAI).
+Trader 1 buys 5 DAI for ETH (5.263158 ETH/DAI).
      
-     Trader 2 buys 5 DAI for ETH (5.84795  ETH/DAI).
+Trader 2 buys 5 DAI for ETH (5.84795  ETH/DAI).
 
 | $`t_0`$ | $`t_1`$ | $`t_2`$ | $`t_3`$ |
 | -------- | -------- | -------- | -------- |
@@ -173,7 +173,7 @@ Upcoming topics:
 ----------------------------------------------------------
 Part 2 - When does it make sense to be a liquidity provider on Uniswap
 
-In the first part, we covered the very basics of Uniswap. An exchange which has no Orderbook but a so called Constant Product Market Model (CPMM). It's simplicity is what makes it elegant. If you missed the first part, you can find it [here]().
+In the first part, we covered the very basics of Uniswap. An exchange which has no Orderbook but a so called Constant Product Market Model (CPMM). It's simple yet elegant. If you missed the first part, you can find it [here]().
 
 ----------------------------------------------------------
 Part 3 - Uniswap's Market-microstructure and some theory

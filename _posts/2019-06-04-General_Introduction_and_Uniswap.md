@@ -3,13 +3,17 @@ layout: post
 mathjax: true
 date:   2019-04-04 14:15:00 +0000
 title:  "Disruption or disillusion? / Upcoming Exchange concepts - A farewell to the order book? / Part 1"
+headerimg: header1.jpg
 ---
 
 
 # Disruption or disillusion? 
 
 ## Upcoming Exchange concepts - A farewell to the order book?
-Part 1 - General Introduction and Uniswap
+
+![]({{site.baseurl}}/assets/img/header1.jpg)
+
+<p style="text-align: center;">Part 1 - General Introduction and Uniswap</p>
 
 Cryptoprojects often praise themselves as disruptive "all new" projects. If you take a look behind the scenes, in most projects disruption becomes disillusion. Scam, bad copy-cats, ideas far beyond reality, mooning marketing concepts and "making already existing solutions just more inefficient", is predominant in the blockchain scene. Fortunately, people got more and more suspicious after the first bubble bursted. Hence, it became harder for bullshit to survive and more and more promising projects evolve. But are these project really disruptive? Do they have the potential to take over what we used to know? 
 
@@ -30,7 +34,7 @@ The example below illustrates an order-book with trades. Here are is a [Youtube 
 
 The description above is very high-level but it is not necessary to go into further detail here. Just some quick addition: There are different ways to match the orders and the auction implementation may vary a little. Even though, it might be a little too general, let us refer to these types of exchanges "order book based" (sometimes referred as Central Limit Order Book CLOB - I did not want to use this term because it can be misleading) exchanges.
 
-Exchanges (Order book based), brokers and dealer markets is what we are used to, in common finance. But there is more. Besides [Request for quotation (RFQ)][4] exchanges which might still sound familiar to some ([KYBER](https://kyber.network/) and [AIRSWAP](https://www.airswap.io/) are using this technique), there are projects like [Uniswap](https://uniswap.io/) and [Bancor](https://www.bancor.network/). This article will focus on [Uniswap](https://uniswap.io/). A project which has enormous support in the community and [increasing volume]5. It is backed by the Ethereum Foundation and has lately been [funded by Paradigma][https://www.theblockcrypto.com/2019/04/23/paradigm-backs-decentralized-exchange-protocol-uniswap/]. To make markets they use a deterministic function. They call this technique **Constant Product Market Maker Model (CPMMM)**. This describes pretty exactly what they do.
+Exchanges (Order book based), brokers and dealer markets is what we are used to, in common finance. But there is more. Besides [Request for quotation (RFQ)][4] exchanges which might still sound familiar to some ([KYBER](https://kyber.network/) and [AIRSWAP](https://www.airswap.io/) are using this technique), there are projects like [Uniswap](https://uniswap.io/) and [Bancor](https://www.bancor.network/). This article will focus on [Uniswap](https://uniswap.io/). A project which has enormous support in the community and [increasing volume][5]. It is backed by the Ethereum Foundation and has lately been [funded by Paradigma][https://www.theblockcrypto.com/2019/04/23/paradigm-backs-decentralized-exchange-protocol-uniswap/]. To make markets they use a deterministic function. They call this technique **Constant Product Market Maker Model (CPMMM)**. This describes pretty exactly what they do.
 I do not want to call it a new type because I do not know if they are new (PLEASE CONTACT ME IF YOU HAVE INFORMATION). Most likely this technique has been around for quite some time but lead an obscure existence. 
 
 *A market without an orderbook. How does the CPMMM work?*
@@ -173,8 +177,6 @@ Upcoming topics:
 [1]: https://www.investopedia.com/terms/d/dealersmarket.asp und https://www.investopedia.com/ask/answers/06/brokerandmarketmaker.asp
 
 [3]: https://www.youtube.com/watch?v=Iaiw5iGjXbw
-
-[4]: https://www.investopedia.com/terms/r/request-for-quote.asp
 
 [5]: https://mikemcdonald.github.io/eth-defi/
 

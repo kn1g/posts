@@ -40,11 +40,11 @@ I do not want to call it a new type because I do not know if they are new (PLEAS
 
 *A market without an orderbook. How does the CPMMM work?*
 
-I will summarize the Constant Product Market Maker Model briefly. For further information, please refer to the provided links at the end of the article TODO FOOTNOTE. In [Uniswap](https://uniswap.io/) there is no order book. The CPMMM always provide liquidity. The price is a function depending on supply and demand. Given a pair of assets $$Asset_A$$ and $Asset_B$ e.g. DAI and ETH. The function is:
+I will summarize the Constant Product Market Maker Model briefly. For further information, please refer to the provided links at the end of the article TODO FOOTNOTE. In [Uniswap](https://uniswap.io/) there is no order book. The CPMMM always provide liquidity. The price is a function depending on supply and demand. Given a pair of assets $$Asset_A$$ and $$Asset_B$$ e.g. DAI and ETH. The function is:
 
 $$supplyAsset_A*supplyAsset_B=C$$
 
-The $supplyAsset_A$ is the amount of Asset A currently available on the exchange and the same applies to Asset B. 
+The $$supplyAsset_A$$ is the amount of Asset A currently available on the exchange and the same applies to Asset B. 
 
 The product is some value $$ C $$.
 
@@ -56,16 +56,16 @@ First, let us focus on the trader who wants to buy $$5_{DAI}$$ for $$ETH$$. Give
 
 ![]({{site.baseurl}}/assets/img/CPMMM_plot.png)
 
-In this example, let us assume we have 100 token x and 100 token y. Hence, the product $C$ would be $$C=100*100=10000$$.The initial start from which prices are calculated, would be the point A in the picture. Let us assume trader B will buy $$20_y$$ token. Hence, trader B has to pay (put into the liquidity pool): $$(100_y-20_y)*(100_x+x_x)=10000_{x*y}$$. Therefore, $$x_x=\frac{10000_{x*y}}{(100_y-20_y)}-100_x$$. Thus, we end up at point B (bue) in the illustration above.
+In this example, let us assume we have 100 token x and 100 token y. Hence, the product $C$ would be $$C=100*100=10000$$.The initial start from which prices are calculated, would be the point A in the picture. Let us assume trader B will buy $$20_y$$ token. Hence, trader B has to pay (put into the liquidity pool): $$(100_y-20_y)*(100_x+x_x)=10000_{x*y}$$. Therefore, $$x_x=\frac{10000_{x*y}}{(100_y-20_y)}-100_x=25_x$$. Thus, we end up at point B (bue) in the illustration above.
 
-Let us assume another trader C. This trader wants to buy 75 x token. Hence, trader C has to pay (put into the liquidity pool): $$(80_y+x_y)*(125_x-75_x)=10000_{x*y}$$. Thus, $$x_x=\frac{10000_{x*y}}{(125_x-75_x)}-80_y$$. We end up at point C (red) in the illustration above. It is obvious how the price shifts on the line.
+Let us assume another trader C. This trader wants to buy 75 x token. Hence, trader C has to pay (put into the liquidity pool): $$(80_y+x_y)*(125_x-75_x)=10000_{x*y}$$. Thus, $$x_y=\frac{10000_{x*y}}{(125_x-75_x)}-80_y=120_y$$. We end up at point C (red) in the illustration above. It is obvious how the price shifts on the line.
 
 | Initial | price to pay | new | 
 | ------ | ------- | ------ |
 | $$100_x$$ : $$100_y$$ | $$25_x$$ for $$20_y$$ | $$125_x$$ : $$80_y$$ |
 | $$125_x$$ : $$80_y$$  | $$120_y$$ for $$50_x$$ | $$50_x$$ : $$200_y$$ |
 
-It is easy to see that the price impact gets less if the liquidity gets bigger relative to the order size. But this is similar to "common" exchanges. In the above example the last oder was over 60 percent of the whole liquidity of token y. Most likely it would have been very hard to fill this order at once on a "common" exchange. As you can see this is not rocket since. I hope this is clear so far. If not I provided links on the bottom of the page to other blog post. They do explain the same in other words. Ok, let us move on.
+It is easy to see that the price impact gets less if the liquidity gets bigger relative to the order size. Hence, the price directly depends on the order size. But this is similar to "common" exchanges. In the above example the last oder was over 60 percent of the whole liquidity of token y. Most likely it would have been very hard to fill this order at once on a "common" exchange. Instead of setting limit orders, the trader can pre-calculate the price and see if they want to execute it or not. Here front-running could be an issue. But let us cover this later in the code discussion. I hope this is clear so far. That is no rocket since at all. If not, I provided links on the bottom of the page to other blog post. They do explain the same in other words. Ok, let us move on.
 
 Above, we assumed an initial liquidity pool aka supply of $$100_{DAI}$$ and $$100_{ETH}$$. Where did this come from? Let us look behind the scenes and see how liquidity is added to an exchange contract. Therefore, so called liquidity provider can deposit DAI and ETH into the liquidity pool. Let us assume a newly created exchange. No DAI and no ETH liquidity is deposited. Liquidity provider, as the name suggests, provide liquidity. But it is a little bit different to what most readers might be used. A liquidity provider always needs to provide both assets. In our example they need to provide ETH and DAI.
 A liquidity provider cannot just add ETH or DAI. This would not make sense in the CPMM model. Hence, the liquidity provider needs to deposit liquidity for both sides. In our example they need to add ETH and DAI in the correct ratio. The correct ratio is given by the current price. Let us assume the price is $$10_{\frac{DAI}{ETH}}$$. Hence, they need to deposit ten times more DAI than ETH. E.g. $$1000_{DAI}$$ and $$100_{ETH}$$. If the price does not change, the next liquidity provider will add liquidity for both assets in the same ratio. If the price changes the liquidity provider will adjust the ratio. In case, they would not, arbitrageurs will immediately correct the price. 
@@ -143,9 +143,9 @@ Total value in $$t_2$$
 
 | Currency | Value | 
 | -------- | -------- | 
-DAI | $$90_{DAI} + \frac{111.111_{ETH}}{5.84795_{\frac{ETH}{DAI}}} *5 = 185_{DAI}$$ | 
-ETH | $$90_{DAI}*\frac{5.263158_{\frac{DAI}{ETH}}}{5} + 111.111_{ETH} = 216.3741_{ETH}$$ | 
-mixed | 99.49991 DAI 100 ETH |
+| DAI | $$90_{DAI} + \frac{111.111_{ETH}}{5.84795_{\frac{ETH}{DAI}}} *5 = 185_{DAI}$$ | 
+| ETH | $$90_{DAI}*\frac{5.263158_{\frac{DAI}{ETH}}}{5} + 111.111_{ETH} = 216.3741_{ETH}$$ | 
+| mixed | 99.49991 DAI 100 ETH |
 
 (Assuming another exchange provides enough volume at the current $$\frac{5.263158_{ETH}}{5} := 1_{DAI}$$ price. Because, in case, the liquidity provider is the only one, another exchange is needed to convert the corresponding funds.)
 

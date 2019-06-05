@@ -2,7 +2,7 @@
 layout: post
 mathjax: true
 date:   2019-04-04 14:15:00 +0000
-title:  "Disruption or disillusion? / Upcoming Exchange concepts - A farewell to the order book? / Part 1"
+title:  "Disruption or disillusion? | Upcoming Exchange concepts - A farewell to the order book? | Part 1"
 headerimg: header1.jpg
 ---
 
@@ -34,7 +34,7 @@ The example below illustrates an order-book with trades. Here are is a [Youtube 
 
 The description above is very high-level but it is not necessary to go into further detail here. Just some quick addition: There are different ways to match the orders and the auction implementation may vary a little. Even though, it might be a little too general, let us refer to these types of exchanges "order book based" (sometimes referred as Central Limit Order Book CLOB - I did not want to use this term because it can be misleading) exchanges.
 
-Exchanges (Order book based), brokers and dealer markets is what we are used to, in common finance. But there is more. Besides [Request for quotation (RFQ)][4] exchanges which might still sound familiar to some ([KYBER](https://kyber.network/) and [AIRSWAP](https://www.airswap.io/) are using this technique), there are projects like [Uniswap](https://uniswap.io/) and [Bancor](https://www.bancor.network/). This article will focus on [Uniswap](https://uniswap.io/). A project which has enormous support in the community and [increasing volume][5]. It is backed by the Ethereum Foundation and has lately been [funded by Paradigma][https://www.theblockcrypto.com/2019/04/23/paradigm-backs-decentralized-exchange-protocol-uniswap/]. To make markets they use a deterministic function. They call this technique **Constant Product Market Maker Model (CPMMM)**. This describes pretty exactly what they do.
+Exchanges (Order book based), brokers and dealer markets is what we are used to, in common finance. But there is more. Besides [Request for quotation (RFQ)][4] exchanges which might still sound familiar to some ([KYBER](https://kyber.network/) and [AIRSWAP](https://www.airswap.io/) are using this technique), there are projects like [Uniswap](https://uniswap.io/) and [Bancor](https://www.bancor.network/). This article will focus on [Uniswap](https://uniswap.io/). A project which has enormous support in the community and [increasing volume][5]. It is backed by the Ethereum Foundation and has lately been [funded by Paradigma](https://www.theblockcrypto.com/2019/04/23/paradigm-backs-decentralized-exchange-protocol-uniswap/). To make markets they use a deterministic function. They call this technique **Constant Product Market Maker Model (CPMMM)**. This describes pretty exactly what they do.
 I do not want to call it a new type because I do not know if they are new (PLEASE CONTACT ME IF YOU HAVE INFORMATION). Most likely this technique has been around for quite some time but lead an obscure existence. 
 
 *A market without an orderbook. How does the CPMMM work?*
@@ -73,10 +73,10 @@ No trades happen
 
 Value on Uniswap
 
-| $$t_0$$ | $$t_1$$ | $$t_2$$ | $$t_3$$ |
-| -------- | -------- | -------- | -------- |
-| 100 DAI | 100 DAI | 100 DAI | 100 DAI |
-| 100 ETH | 100 ETH | 100 ETH | 100 ETH |
+| $$t_0$$ | $$t_1$$ | $$t_2$$ |
+| -------- | -------- | -------- |
+| 100 DAI | 100 DAI | 100 DAI | 
+| 100 ETH | 100 ETH | 100 ETH | 
 
 Total value in
 
@@ -95,10 +95,10 @@ In $$t_3$$ the liquidity provider withdraws his funds and gets back what he put 
 
 Trader 1 buys 5 DAI for ETH.
 
-| $$t_0$$ | $$t_1$$ | $$t_2$$ | $$t_3$$ |
-| -------- | -------- | -------- | -------- |
-| 100 DAI | 95 DAI | 95 DAI | 95 ETH |
-| 100 ETH | 105.263158 ETH | 105.263158 ETH | 105.263158 ETH |
+| $$t_0$$ | $$t_1$$ | $$t_2$$ | 
+| -------- | -------- | -------- | 
+| 100 DAI | 95 DAI | 95 DAI |
+| 100 ETH | 105.263158 ETH | 105.263158 ETH |
 
 Total value in 
 
@@ -119,10 +119,10 @@ Trader 1 buys 5 DAI for ETH $$5.263158_{\frac{ETH}{DAI}}$$.
      
 Trader 2 buys 5 DAI for ETH $$5.84795_{\frac{ETH}{DAI}}$$.
 
-| $$t_0$$ | $$t_1$$ | $$t_2$$ | $$t_3$$ |
-| -------- | -------- | -------- | -------- |
-| 100 DAI | 95 DAI | 90 DAI | 90 DAI |
-| 100 ETH | 105.263158 ETH | 111.111 ETH | 111.111 ETH |
+| $$t_0$$ | $$t_1$$ | $$t_2$$ | 
+| -------- | -------- | -------- | 
+| 100 DAI | 95 DAI | 90 DAI |
+| 100 ETH | 105.263158 ETH | 111.111 ETH |
 
 Total value in 
 

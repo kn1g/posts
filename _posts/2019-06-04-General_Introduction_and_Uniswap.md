@@ -1,7 +1,7 @@
 ---
 layout: post
 mathjax: true
-date:   2019-04-04 14:15:00 +0000
+date:   2019-06-04 14:15:00 +0000
 title:  "Disruption or disillusion? | Upcoming Exchange concepts - A farewell to the order book? | Part 1"
 headerimg: header1.jpg
 ---
@@ -78,11 +78,13 @@ Value on Uniswap
 | 100 DAI | 100 DAI | 100 DAI | 
 | 100 ETH | 100 ETH | 100 ETH | 
 
-Total value in
+Total value in $$t_2$$
 
-| DAI | ETH | mixed |
-| -------- | -------- | -------- |
-| 200 DAI | 200 ETH | 100 DAI 100 ETH|
+| Currency | Value | 
+| -------- | -------- | 
+| DAI | 200 DAI | 
+| ETH | 200 ETH | 
+| mixed | 100 DAI 100 ETH|
 
 (Assuming another exchange provides enough volume at the current $$1_{ETH} = 1_{DAI}$$ price. Because, in case, the liquidity provider is the only one, another exchange is needed to convert the corresponding funds.)
 
@@ -100,11 +102,13 @@ Trader 1 buys 5 DAI for ETH.
 | 100 DAI | 95 DAI | 95 DAI |
 | 100 ETH | 105.263158 ETH | 105.263158 ETH |
 
-Total value in 
+Total value in $$t_2$$
 
-| DAI | ETH | mixed |
-| -------- | -------- | -------- |
-| $$95_{DAI} + \frac{105.263158_{ETH}}{5.263158_{\frac{ETH}{DAI}}}*5=195_{DAI}$$ | $$95_{DAI}*\frac{5.263158_{\frac{ETH}{DAI}}}{5} + 105.263158_{ETH} = 205.263158_{ETH}$$ | 100 DAI 100 ETH |
+| Currency | Value | 
+| -------- | -------- | 
+| DAI | $$95_{DAI} + \frac{105.263158_{ETH}}{5.263158_{\frac{ETH}{DAI}}}*5=195_{DAI}$$ | 
+| ETH | $$95_{DAI}*\frac{5.263158_{\frac{ETH}{DAI}}}{5} + 105.263158_{ETH} = 205.263158_{ETH}$$ | 
+| mixed | 100 DAI 100 ETH |
 
 (Assuming another exchange provides enough volume at the current $$\frac{5.263158_{ETH}}{5} := 1_{DAI}$$ price. Because, in case, the liquidity provider is the only one, another exchange is needed to convert the corresponding funds.)
 
@@ -124,11 +128,13 @@ Trader 2 buys 5 DAI for ETH $$5.84795_{\frac{ETH}{DAI}}$$.
 | 100 DAI | 95 DAI | 90 DAI |
 | 100 ETH | 105.263158 ETH | 111.111 ETH |
 
-Total value in 
+Total value in $$t_2$$
 
-| DAI | ETH | mixed |
-| -------- | -------- | -------- |
-| $$90_{DAI} + \frac{111.111_{ETH}}{5.84795_{\frac{ETH}{DAI}}} *5 = 185_{DAI}$$ | $$90_{DAI}*\frac{5.263158_{\frac{DAI}{ETH}}}{5} + 111.111_{ETH} = 216.3741_{ETH}$$ | 99.49991 DAI 100 ETH |
+| Currency | Value | 
+| -------- | -------- | 
+DAI | $$90_{DAI} + \frac{111.111_{ETH}}{5.84795_{\frac{ETH}{DAI}}} *5 = 185_{DAI}$$ | 
+ETH | $$90_{DAI}*\frac{5.263158_{\frac{DAI}{ETH}}}{5} + 111.111_{ETH} = 216.3741_{ETH}$$ | 
+mixed | 99.49991 DAI 100 ETH |
 
 (Assuming another exchange provides enough volume at the current $$\frac{5.263158_{ETH}}{5} := 1_{DAI}$$ price. Because, in case, the liquidity provider is the only one, another exchange is needed to convert the corresponding funds.)
 

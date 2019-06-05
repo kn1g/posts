@@ -34,7 +34,8 @@ The example below illustrates an order-book with trades. Here are is a [Youtube 
 
 The description above is very high-level but it is not necessary to go into further detail here. Just some quick addition: There are different ways to match the orders and the auction implementation may vary a little. Even though, it might be a little too general, let us refer to these types of exchanges "order book based" (sometimes referred as Central Limit Order Book CLOB - I did not want to use this term because it can be misleading) exchanges.
 
-Exchanges (Order book based), brokers and dealer markets is what we are used to, in common finance. But there is more. Besides [Request for quotation (RFQ)][4] exchanges which might still sound familiar to some ([KYBER](https://kyber.network/) and [AIRSWAP](https://www.airswap.io/) are using this technique), there are projects like [Uniswap](https://uniswap.io/) and [Bancor](https://www.bancor.network/). This article will focus on [Uniswap](https://uniswap.io/). A project which has enormous support in the community and [increasing volume][5]. It is backed by the Ethereum Foundation and has lately been [funded by Paradigma](https://www.theblockcrypto.com/2019/04/23/paradigm-backs-decentralized-exchange-protocol-uniswap/). To make markets they use a deterministic function. They call this technique **Constant Product Market Maker Model (CPMMM)**. This describes pretty exactly what they do.
+Exchanges (Order book based), brokers and dealer markets is what we are used to, in common finance. But there is more. Besides [Request for quotation (RFQ)][4] exchanges which might still sound familiar to some ([KYBER](https://kyber.network/) and [AIRSWAP](https://www.airswap.io/) are using this technique), there are projects like [Uniswap](https://uniswap.io/) and [Bancor](https://www.bancor.network/). This article will focus on [Uniswap](https://uniswap.io/). A project which has enormous support in the community and [increasing volume][5]. It is backed by the Ethereum Foundation and has lately been [funded by Paradigma](https://www.theblockcrypto.com/2019/04/23/paradigm-backs-decentralized-exchange-protocol-uniswap/). To make markets they use an algorithm. This technique is sometimes referred to as "Automatic Market Maker". I do not like this term. Today, everything is somehow automated. This makes it quite confusing. The particular variant [Uniswap](https://uniswap.io/) uses, is called **Constant Product Market Maker Model (CPMMM)**. The CPMMM is a simple deterministic function. And CPMMM discribes what is done pretty accurate - as we will see below.
+
 I do not want to call it a new type because I do not know if they are new (PLEASE CONTACT ME IF YOU HAVE INFORMATION). Most likely this technique has been around for quite some time but lead an obscure existence. 
 
 *A market without an orderbook. How does the CPMMM work?*
@@ -51,10 +52,20 @@ For example:
 $$ 100_{DAI}*100_{ETH}=10000_{DAIxETH} $$. So far, so good.
 
 Two participants exist on [Uniswap](https://uniswap.io/). So called **liquidity provider** and the **common traders**. 
-First, let us focus on the trader who wants to buy $$5_{DAI}$$ for $$ETH$$. Given the function above and the example liquidity of $$100_{DAI}$$ and $$100_{ETH}$$ on the exchange, the trader can calculate the price they have to pay for $$5_{DAI}$$. The simple rule is: Keep the product constant. Hence, after the trade the product still needs to be $$10000_{DAIxETH}$$. Let's see how much ETH the trader needs to put into the ETH liquidity pool to take out $$5_{DAI}$$ and keep the product constant. This can easily be calculated by $$(100_{DAI} - 5_{DAI}) * (100_{ETH} + x_{ETH}) = 10000_{DAIxETH}$$. We substract $$5_{DAI}$$ because they are taken out of the pool. We add $$x_{ETH}$$ because that is what the trader needs to pay (put into the pool) for taking the $$5_{DAI}$$ out. Solving for $$x_{ETH}$$ gives $$x_{ETH} = \frac{10000_{DAIxETH}}{95_{DAI}} - 100_{ETH}$$. Hence, $$x_{ETH} = 5.263158_{ETH}$$. This price seems reasonable because we started with a 1:1 ration of DAI and ETH. If one asset has high demand, the liquidity pool will have less and less of this asset. Hence, it gets more and more expensive.
-Below there are further example trades and how the price changes.
+First, let us focus on the trader who wants to buy $$5_{DAI}$$ for $$ETH$$. Given the function above and the example liquidity of $$100_{DAI}$$ and $$100_{ETH}$$ on the exchange, the trader can calculate the price they have to pay for $$5_{DAI}$$. The simple rule is: *Keep the product constant*. Hence, after the trade has been executed, the product still needs to be $$10000_{DAIxETH}$$. Let's see how much ETH the trader needs to put into the ETH liquidity pool to take out $$5_{DAI}$$ and keep the product constant. This can easily be calculated by $$(100_{DAI} - 5_{DAI}) * (100_{ETH} + x_{ETH}) = 10000_{DAIxETH}$$. We subtract $$5_{DAI}$$ because they are taken out of the pool. We add $$x_{ETH}$$ because that is what the trader needs to pay (put into the pool) for taking the $$5_{DAI}$$ out. Solving for $$x_{ETH}$$ gives $$x_{ETH} = \frac{10000_{DAIxETH}}{95_{DAI}} - 100_{ETH}$$. Hence, the trader need to pay $$x_{ETH} = 5.263158_{ETH}$$ into the ETH pool for taking out $$5_{DAI}$$. This price seems reasonable because we started with a 1:1 ration of DAI and ETH. If one asset has high demand, the liquidity pool will have less and less of this asset. Hence, it gets more and more expensive. Obviously, the function is a multiplication and therefore, this does not scale linearly. This can easily be visualized by plotting the function and all possible prices. I also added two example trades. More information on the trades is below the image.
 
-*Illustration or Table*
+![]({{site.baseurl}}/assets/img/CPMMM_plot.png)
+
+In this example, let us assume we have 100 token x and 100 token y. Hence, the product $C$ would be $$C=100*100=10000$$.The initial start from which prices are calculated, would be the point A in the picture. Let us assume trader B will buy $$20_y$$ token. Hence, trader B has to pay (put into the liquidity pool): $$(100_y-20_y)*(100_x+x_x)=10000_{x*y}$$. Therefore, $$x_x=\frac{10000_{x*y}}{(100_y-20_y)}-100_x$$. Thus, we end up at point B (bue) in the illustration above.
+
+Let us assume another trader C. This trader wants to buy 75 x token. Hence, trader C has to pay (put into the liquidity pool): $$(80_y+x_y)*(125_x-75_x)=10000_{x*y}$$. Thus, $$x_x=\frac{10000_{x*y}}{(125_x-75_x)}-80_y$$. We end up at point C (red) in the illustration above. It is obvious how the price shifts on the line.
+
+| Initial | price to pay | new | 
+| ------ | ------- | ------ |
+| $$100_x$$ : $$100_y$$ | $$25_x$$ for $$20_y$$ | $$125_x$$ : $$80_y$$ |
+| $$125_x$$ : $$80_y$$  | $$120_y$$ for $$50_x$$ | $$50_x$$ : $$200_y$$ |
+
+It is easy to see that the price impact gets less if the liquidity gets bigger relative to the order size. But this is similar to "common" exchanges. In the above example the last oder was over 60 percent of the whole liquidity of token y. Most likely it would have been very hard to fill this order at once on a "common" exchange. As you can see this is not rocket since. I hope this is clear so far. If not I provided links on the bottom of the page to other blog post. They do explain the same in other words. Ok, let us move on.
 
 Above, we assumed an initial liquidity pool aka supply of $$100_{DAI}$$ and $$100_{ETH}$$. Where did this come from? Let us look behind the scenes and see how liquidity is added to an exchange contract. Therefore, so called liquidity provider can deposit DAI and ETH into the liquidity pool. Let us assume a newly created exchange. No DAI and no ETH liquidity is deposited. Liquidity provider, as the name suggests, provide liquidity. But it is a little bit different to what most readers might be used. A liquidity provider always needs to provide both assets. In our example they need to provide ETH and DAI.
 A liquidity provider cannot just add ETH or DAI. This would not make sense in the CPMM model. Hence, the liquidity provider needs to deposit liquidity for both sides. In our example they need to add ETH and DAI in the correct ratio. The correct ratio is given by the current price. Let us assume the price is $$10_{\frac{DAI}{ETH}}$$. Hence, they need to deposit ten times more DAI than ETH. E.g. $$1000_{DAI}$$ and $$100_{ETH}$$. If the price does not change, the next liquidity provider will add liquidity for both assets in the same ratio. If the price changes the liquidity provider will adjust the ratio. In case, they would not, arbitrageurs will immediately correct the price. 
@@ -158,9 +169,11 @@ Pros:
 Cons:
 
    -   No limit orders
-   -   ... TDB
+   -   ...
 
 Conclusion
+
+I sometimes read that large orders on Uniswap are more expensive. I need object that this only happens if they are large compared to the provided liquidity. A large order which drains a big share of the liquidity on a "common" exchange will also be expensive or not executed at all.
 
 To be done
 
@@ -179,6 +192,11 @@ Upcoming topics:
    -  Can the system collapse?
    -  How is the code implementation?
    -  Bancor another concept
+
+If you are not into my wording, there are multiple articles explaining more or less the same with other words. Check them out:
+
+https://medium.com/scalar-capital/uniswap-a-unique-exchange-f4ef44f807bf
+
 
 [1]: https://www.investopedia.com/terms/d/dealersmarket.asp und https://www.investopedia.com/ask/answers/06/brokerandmarketmaker.asp
 

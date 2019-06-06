@@ -28,7 +28,7 @@ We usually differ between three different market types.
 -   Exchange
 
 We won't go into detail here for Dealer and broker markets. This can be looked up quickly in the [linked articles][1]. Let us focus on Exchanges (very high-level and simplified). Exchanges try to connect the two parties (buyer and seller) directly. Usually done by an auction based market. In an auction based market buyers enter competitive bids and sellers submit competitive offers. The exchange keeps track of all bids and offers (asks) in a so called [orderbook](https://en.wikipedia.org/wiki/Order_book_(trading)). An exchange tries to match two orders if possible. The current price is the price where the last bid/ask match was possible. The bid ask spread is the price different between the bid and ask orders closest to the current price.
-The example below illustrates an order-book with trades. Here are is a [Youtube video][3].
+The example below illustrates an order-book with trades. Here is a [Youtube video][3].
 
 *Illustration*
 
@@ -65,7 +65,7 @@ Let us assume another trader C. This trader wants to buy 75 x token. Hence, trad
 | $$100_x$$ : $$100_y$$ | $$25_x$$ for $$20_y$$ | $$125_x$$ : $$80_y$$ |
 | $$125_x$$ : $$80_y$$  | $$120_y$$ for $$50_x$$ | $$50_x$$ : $$200_y$$ |
 
-It is easy to see that the price impact gets less if the liquidity gets bigger relative to the order size. Hence, the price directly depends on the order size. But this is similar to "common" exchanges. In the above example the last oder was over 60 percent of the whole liquidity of token y. Most likely it would have been very hard to fill this order at once on a "common" exchange. Instead of setting limit orders, the trader can pre-calculate the price and see if they want to execute it or not. Here front-running could be an issue. But let us cover this later in the code discussion. I hope this is clear so far. That is no rocket since at all. If not, I provided links on the bottom of the page to other blog post. They do explain the same in other words. Ok, let us move on.
+It is easy to see that the price impact gets less if the liquidity gets bigger relative to the order size. Hence, the price directly depends on the order size. But this is similar to "common" exchanges. In the above example the last oder was over 60 percent of the whole liquidity of token y. Most likely it would have been very hard to fill this order at once on a "common" exchange. Instead of setting limit orders, the trader can pre-calculate the price and see if they want to execute it or not. Here front-running could be an issue. But let us cover this later in the code discussion. I hope this is clear so far. That is no rocket science at all. If not, I provided links on the bottom of the page to other blog post. They do explain the same in other words. Ok, let us move on.
 
 Above, we assumed an initial liquidity pool aka supply of $$100_{DAI}$$ and $$100_{ETH}$$. Where did this come from? Let us look behind the scenes and see how liquidity is added to an exchange contract. Therefore, so called liquidity provider can deposit DAI and ETH into the liquidity pool. Let us assume a newly created exchange. No DAI and no ETH liquidity is deposited. Liquidity provider, as the name suggests, provide liquidity. But it is a little bit different to what most readers might be used. A liquidity provider always needs to provide both assets. In our example they need to provide ETH and DAI.
 A liquidity provider cannot just add ETH or DAI. This would not make sense in the CPMM model. Hence, the liquidity provider needs to deposit liquidity for both sides. In our example they need to add ETH and DAI in the correct ratio. The correct ratio is given by the current price. Let us assume the price is $$10_{\frac{DAI}{ETH}}$$. Hence, they need to deposit ten times more DAI than ETH. E.g. $$1000_{DAI}$$ and $$100_{ETH}$$. If the price does not change, the next liquidity provider will add liquidity for both assets in the same ratio. If the price changes the liquidity provider will adjust the ratio. In case, they would not, arbitrageurs will immediately correct the price. 
@@ -125,7 +125,7 @@ Total value in $$t_2$$
 
 - TBD Kurvenbild-
 
-This time, the liquidity provider gets $$95_{DAI}$$ and $$105.263158_{ETH}$$ back. Now DAI is worth more than ETH. Therefore, the total value in DAI or ETH changes according to the currency used for evaluation. But overall, the value does not change. As before, the liquidity provider only has opportunity costs.
+This time, the liquidity provider gets $$95_{DAI}$$ and $$205.263158_{ETH}$$ back. Now DAI is worth more than ETH. Therefore, the total value in DAI or ETH changes according to the currency used for evaluation. But overall, the value does not change. As before, the liquidity provider only has opportunity costs.
 
 
 *Scenario 3:*
@@ -162,9 +162,9 @@ What makes Uniswap so interesting?
 
 Pros:
 
-   -   simplicity
-   -   always liquidity
-   -   ... TBD
+   -   Simplicity
+   -   Always liquidity
+   -   Fast
 
 Cons:
 
@@ -177,7 +177,7 @@ I sometimes read that large orders on Uniswap are more expensive. I need object 
 
 To be done
 
-I love the simplicity and als the research opportunity that come up with the CPMM. It totally changes the market microstructure. Deterministic price changes and the transparent structure make it (imho) to an amazing research topic. (TBD maybe mention paper project topics) Can you come up with more research topics?
+I love the simplicity and also the research opportunity that come up with the CPMM. It totally changes the market microstructure. Deterministic price changes and the transparent structure make it (imho) to an amazing research topic. (TBD maybe mention paper project topics) Can you come up with more research topics?
 
 Right now, Uniswap does not want to replace existing exchanges (Link). Furthermore, they see themselves as a kind of supplementary exchange and welcome arbitrage traders to adjust the prices.
 Hence, Uniswap is depended on other exchanges to keep the rates balanced.

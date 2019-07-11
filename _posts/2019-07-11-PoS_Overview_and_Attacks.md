@@ -186,7 +186,7 @@ Let us assume the network forked for some reason. As blocks can easily created a
 
 > The ''Nothing at Stake'' problem
 
-|  |  |
+
 | ------- | ------- |
 | The Nothing at Stake problem  | Stake does not add to the convergence of the system, since the same stake can be applied to multiple competing chains, which is a risk free way of stakers increasing their rewards. In contrast, in PoW based systems, energy is a real world finite resource and therefore the ''same'' work cannot be applied to multiple competing chains. |
 | Defense 1 | The issue can be avoided or mitigated against. The protocol can be adjusted such that if a staker uses the same stake on multiple chains, a third party can submit a proof of this to either chain, resulting in a punishment, such as the confiscation of the stake (slashing conditions). Alternatively instead of a punishment, the cheater could lose potential rewards or be excluded from the staker pool. |

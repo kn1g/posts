@@ -169,7 +169,7 @@ It is hart to prevent this attack but the attack is hard to perform and easy to 
 
 Sources:
 
-> [How Proof of Stake Renders a 51% Attack Unlikely and Unappealing](https://blog.qtum.org/how-proof-of-stake-renders-a-51-attack-unlikely-and-unappealing-ddebdc91a569)
+[How Proof of Stake Renders a 51% Attack Unlikely and Unappealing](https://blog.qtum.org/how-proof-of-stake-renders-a-51-attack-unlikely-and-unappealing-ddebdc91a569)
 
 
 ### Nothing at Stake
@@ -200,13 +200,13 @@ Casper implements a design strategy to counteract this problem called Slasher.
 
 Sources 
 
-> [Casper (proof of stake)](https://golden.com/wiki/Casper_(proof_of_stake))
->
-> [PoTS—A Secure Proof of TEE-Stake for Permissionless Blockchains](https://eprint.iacr.org/2018/1135.pdf)
->
-> [Understanding Proof of Stake: The Nothing at Stake Theory](https://medium.com/coinmonks/understanding-proof-of-stake-the-nothing-at-stake-theory-1f0d71bc027)
->
-> [Complete guide to Proof of Stake – Ethereum’s latest proposal & Vitalik Buterin interview](https://blog.bitmex.com/complete-guide-to-proof-of-stake-ethereums-latest-proposal-vitalik-buterin-interview/) 
+[Casper (proof of stake)](https://golden.com/wiki/Casper_(proof_of_stake))
+
+[PoTS—A Secure Proof of TEE-Stake for Permissionless Blockchains](https://eprint.iacr.org/2018/1135.pdf)
+
+[Understanding Proof of Stake: The Nothing at Stake Theory](https://medium.com/coinmonks/understanding-proof-of-stake-the-nothing-at-stake-theory-1f0d71bc027)
+
+[Complete guide to Proof of Stake – Ethereum’s latest proposal & Vitalik Buterin interview](https://blog.bitmex.com/complete-guide-to-proof-of-stake-ethereums-latest-proposal-vitalik-buterin-interview/) 
 
 ### Fake Stake Attacks 
 
@@ -233,9 +233,9 @@ Checkpoints,  enforce  that any fork generated prior to a sufficiently deep bloc
 
 Sources:
 
-> [''Fake Stake'' attacks on chain-based Proof-of-Stake cryptocurrencies](https://medium.com/@dsl_uiuc/fake-stake-attacks-on-chain-based-proof-of-stake-cryptocurrencies-b8b05723f806)
-> 
-> [Short Paper: I Can’t Believe It’s Not Stake!Resource Exhaustion Attacks on PoS](https://fc19.ifca.ai/preproceedings/180-preproceedings.pdf)
+[''Fake Stake'' attacks on chain-based Proof-of-Stake cryptocurrencies](https://medium.com/@dsl_uiuc/fake-stake-attacks-on-chain-based-proof-of-stake-cryptocurrencies-b8b05723f806)
+
+[Short Paper: I Can’t Believe It’s Not Stake!Resource Exhaustion Attacks on PoS](https://fc19.ifca.ai/preproceedings/180-preproceedings.pdf)
 
 
 ### Stake Amplification or Spent Stake Attack

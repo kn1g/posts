@@ -185,7 +185,7 @@ Let us assume the network forked for some reason. As blocks can easily created a
 
 
 > The ''Nothing at Stake'' problem
->
+
 |  |  |
 | ------- | ------- |
 | The Nothing at Stake problem  | Stake does not add to the convergence of the system, since the same stake can be applied to multiple competing chains, which is a risk free way of stakers increasing their rewards. In contrast, in PoW based systems, energy is a real world finite resource and therefore the ''same'' work cannot be applied to multiple competing chains. |

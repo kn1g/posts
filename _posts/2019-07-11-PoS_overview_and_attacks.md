@@ -1,3 +1,8 @@
+---
+layout: post
+title:  "Disruption or disillusion? / Upcoming Exchange concepts - A farewell to the order book? / Part 1"
+---
+
 # Proof-of-Stake - Overview and Attacks
 
 The Introduction into this article gives an overview about the PoS core concept and different ways to implement this concept. The main part will discuss attacks on Proof-of-Stake networks. 

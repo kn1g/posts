@@ -187,13 +187,28 @@ Let us assume the network forked for some reason. As blocks can easily created a
 > The ''Nothing at Stake'' problem
 
 
-| ------- | ------- |
-| The Nothing at Stake problem  | Stake does not add to the convergence of the system, since the same stake can be applied to multiple competing chains, which is a risk free way of stakers increasing their rewards. In contrast, in PoW based systems, energy is a real world finite resource and therefore the ''same'' work cannot be applied to multiple competing chains. |
-| Defense 1 | The issue can be avoided or mitigated against. The protocol can be adjusted such that if a staker uses the same stake on multiple chains, a third party can submit a proof of this to either chain, resulting in a punishment, such as the confiscation of the stake (slashing conditions). Alternatively instead of a punishment, the cheater could lose potential rewards or be excluded from the staker pool. |
-| Response from PoS sceptic | The above defence is inappropriate and punishes what may be legitimate or necessary behavior. For example if a staker receives a block first, while the majority receives an alternative block first, it may be legitimate for that staker to change their mind and switch to follow the majority. Indeed the process of changing your mind and switching to the majority to ensure the network converges is the point of the consensus system. If this behavior is punished, how does the system converge?<br><br>Either the economic value of the punishment is higher than the rewards for switching to follow the majority, or it isn’t. Therefore the nothing at stake problem means PoS systems can never make a contribution to system convergence and the idea is therefore fundamentally flawed. <br><br> [!img](PoSsceptic.png) |
-|Defence 2 | The apparent dilemma above can potentially be  resolved in various ways. For instance:<br><br>Earlier proposals from Casper used multiple rounds of staking. Changing one’s mind in the early rounds can be legitimate and perhaps the punishment is small, while in later rounds the punishment for using the same stake in multiple competing chains increases, such that eventually users have a high degree of assurance over the finality of the system.<br>The most recent iteration of Casper aims to allow validators to change their minds, but only in ''legitimate'' scenarios and not when its ''illegitimate''. |
-| Response from PoS sceptic | By adding multiple rounds or criteria in which validators can change their minds one is increasing the complexity of the system. This is merely adding layers of obfuscation to conceal the inherent weaknesses illustrated by the nothing at stake problem, without solving the fundamental issue.|
-|Defence 3 | No system is perfect, indeed it’s mathematically impossible to construct a perfect system and therefore the nothing at stake problem is not solved, however the measures identified above mitigate the problem, such that these theoretical issues are unlikely to apply in the real world.|
+> Stake does not add to the convergence of the system, since the same stake can be applied to multiple competing chains, which is a risk free way of stakers increasing their rewards. In contrast, in PoW based systems, energy is a real world finite resource and therefore the ''same'' work cannot be applied to multiple competing chains. 
+
+**Defense 1**
+
+The issue can be avoided or mitigated against. The protocol can be adjusted such that if a staker uses the same stake on multiple chains, a third party can submit a proof of this to either chain, resulting in a punishment, such as the confiscation of the stake (slashing conditions). Alternatively instead of a punishment, the cheater could lose potential rewards or be excluded from the staker pool. 
+
+**Response from PoS sceptic **
+
+The above defence is inappropriate and punishes what may be legitimate or necessary behavior. For example if a staker receives a block first, while the majority receives an alternative block first, it may be legitimate for that staker to change their mind and switch to follow the majority. Indeed the process of changing your mind and switching to the majority to ensure the network converges is the point of the consensus system. If this behavior is punished, how does the system converge?<br><br>Either the economic value of the punishment is higher than the rewards for switching to follow the majority, or it isn’t. Therefore the nothing at stake problem means PoS systems can never make a contribution to system convergence and the idea is therefore fundamentally flawed. <br><br> [!img](PoSsceptic.png) 
+
+**Defence 2** 
+
+The apparent dilemma above can potentially be  resolved in various ways. For instance:<br><br>Earlier proposals from Casper used multiple rounds of staking. Changing one’s mind in the early rounds can be legitimate and perhaps the punishment is small, while in later rounds the punishment for using the same stake in multiple competing chains increases, such that eventually users have a high degree of assurance over the finality of the system.<br>The most recent iteration of Casper aims to allow validators to change their minds, but only in ''legitimate'' scenarios and not when its ''illegitimate''. 
+
+**Response from PoS sceptic** 
+
+By adding multiple rounds or criteria in which validators can change their minds one is increasing the complexity of the system. This is merely adding layers of obfuscation to conceal the inherent weaknesses illustrated by the nothing at stake problem, without solving the fundamental issue.
+
+**Defence 3** 
+
+No system is perfect, indeed it’s mathematically impossible to construct a perfect system and therefore the nothing at stake problem is not solved, however the measures identified above mitigate the problem, such that these theoretical issues are unlikely to apply in the real world.
+
 From [Complete guide to Proof of Stake – Ethereum’s latest proposal & Vitalik Buterin interview](https://blog.bitmex.com/complete-guide-to-proof-of-stake-ethereums-latest-proposal-vitalik-buterin-interview/) 
 
 

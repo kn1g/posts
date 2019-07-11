@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Disruption or disillusion? / Upcoming Exchange concepts - A farewell to the order book? / Part 1"
+title:  "Proof-of-Stake - Overview and Attacks"
 ---
 
 # Proof-of-Stake - Overview and Attacks
